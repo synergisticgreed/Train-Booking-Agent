@@ -1,0 +1,18 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official rule document.
+Document: RUL-CON-01 "Concessions" (effective from 2025-04-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. Who is eligible": Senior citizens, persons with disabilities (with a certificate) and students on approved study tours.
+- "2. Senior citizens": Passengers aged 60 or more get 40% off the base fare in SL, 3A and 2A, if they choose it at booking.
+- "3. Proof and claims": Proof of age or eligibility must be carried. Claims made after booking, or that need documents checked, are decided by the Concessions desk; the assistant cannot approve them.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

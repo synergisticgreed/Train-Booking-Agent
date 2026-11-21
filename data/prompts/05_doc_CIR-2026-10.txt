@@ -1,0 +1,17 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official circular (a notice that changes or adds to the rules).
+Document: CIR-2026-10 "Festival special trains" (effective from 2026-11-15). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. Special trains": For the festival season Ujjwal Rail runs these special trains: 01001 South Central Special LTT to NGP, runs Sun; 02002 Winter Festival Special CSMT to NGP, runs Fri,Sat; 01123 Agra Delhi Special AGC to DLI, runs Mon,Sun; 02020 Delhi-Nashik Special NDLS to CSMT, runs Sat.
+- "2. Booking rules": Normal booking, cancellation and refund rules apply to special trains. Tatkal is not available on specials.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

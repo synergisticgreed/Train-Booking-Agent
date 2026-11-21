@@ -1,0 +1,21 @@
+{
+ "step": "05_doc_RUL-CLS-01",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:03:41+05:30",
+ "seconds": 6.1,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_RUL-CLS-01.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official rule document.\nDocument: RUL-CLS-01 \"Classes of travel\" (effective from 2025-04-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Classes\": SL Sleeper (non-AC berths), 3A AC Three Tier, 2A AC Two Tier, 1A AC First Class (lockable cabins and coupes), CC AC Chair Car (seats, day trains).\n- \"2. Berths and seats per train\": Bookable berths or seats per train per class: SL 72, 3A 64, 2A 46, 1A 18, CC 78.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Classes",
+    "text": "Ujjwal Rail offers the following classes of travel: SL Sleeper (non-AC berths), 3A AC Three Tier, 2A AC Two Tier, 1A AC First Class (lockable cabins and coupes), and CC AC Chair Car (seats, day trains). Each class provides the amenities described in parentheses."
+   },
+   {
+    "section": "2. Berths and seats per train",
+    "text": "The number of bookable berths or seats per train for each class is: SL 72, 3A 64, 2A 46, 1A 18, and CC 78. These capacities apply to every scheduled service."
+   }
+  ]
+ }
+}

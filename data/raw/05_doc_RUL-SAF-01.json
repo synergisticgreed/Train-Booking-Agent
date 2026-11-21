@@ -1,0 +1,29 @@
+{
+ "step": "05_doc_RUL-SAF-01",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:05:01+05:30",
+ "seconds": 2.2,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_RUL-SAF-01.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official rule document.\nDocument: RUL-SAF-01 \"Conduct and safety\" (effective from 2025-04-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Conduct\": Passengers must not disturb others, occupy berths not allotted to them, or play loud music between 22:00 and 06:00.\n- \"2. Women and children\": Reserved berths for women travelling alone are kept where available; staff help is available on request.\n- \"3. Smoking and alcohol\": Smoking and alcohol are prohibited on trains and platforms.\n- \"4. Emergencies\": Use the emergency alarm only in real emergencies; misuse is an offence.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Conduct",
+    "text": "Passengers must not disturb others, occupy berths not allotted to them, or play loud music between 22:00 and 06:00."
+   },
+   {
+    "section": "2. Women and children",
+    "text": "Reserved berths for women travelling alone are kept where available; staff help is available on request."
+   },
+   {
+    "section": "3. Smoking and alcohol",
+    "text": "Smoking and alcohol are prohibited on trains and platforms."
+   },
+   {
+    "section": "4. Emergencies",
+    "text": "Use the emergency alarm only in real emergencies; misuse is an offence."
+   }
+  ]
+ }
+}

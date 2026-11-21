@@ -1,0 +1,17 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official circular (a notice that changes or adds to the rules).
+Document: CIR-2026-12 "Fog season: delays and late-train refunds" (effective from 2026-11-20). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. Expected delays": From December to February trains on the Delhi routes (NDLS, DLI) may run late because of fog. Check the train status before leaving home.
+- "2. Refunds for late trains": The late-train rule still applies: if the train departs more than 3 hours late and you do not travel, file a TDR before departure for a full refund.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

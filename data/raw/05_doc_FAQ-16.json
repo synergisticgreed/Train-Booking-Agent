@@ -1,0 +1,17 @@
+{
+ "step": "05_doc_FAQ-16",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:07:02+05:30",
+ "seconds": 2.0,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_FAQ-16.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail helpdesk FAQ answer.\nDocument: FAQ-16 \"Train late ho to refund milega kya?\" (effective from 2025-06-01). Language: Hinglish (Hindi in Latin script).\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"Answer\": Agar train 3 ghante se zyada late chale aur aap yatra na karein, to departure se pehle TDR file karke poora refund mil sakta hai.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "Answer",
+    "text": "Agar aapki train 3 ghante se zyada late ho jati hai aur aap yatra nahi karte, to aap departure se pehle TDR file kar sakte hain. TDR file karne par aapko poora refund mil sakta hai."
+   }
+  ]
+ }
+}

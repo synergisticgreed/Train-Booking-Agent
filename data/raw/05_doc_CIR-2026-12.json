@@ -1,0 +1,21 @@
+{
+ "step": "05_doc_CIR-2026-12",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:05:58+05:30",
+ "seconds": 5.8,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_CIR-2026-12.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official circular (a notice that changes or adds to the rules).\nDocument: CIR-2026-12 \"Fog season: delays and late-train refunds\" (effective from 2026-11-20). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Expected delays\": From December to February trains on the Delhi routes (NDLS, DLI) may run late because of fog. Check the train status before leaving home.\n- \"2. Refunds for late trains\": The late-train rule still applies: if the train departs more than 3 hours late and you do not travel, file a TDR before departure for a full refund.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Expected delays",
+    "text": "From December to February trains on the Delhi routes (NDLS, DLI) may run late because of fog. Passengers should check the train status before leaving home."
+   },
+   {
+    "section": "2. Refunds for late trains",
+    "text": "The late-train rule still applies: if the train departs more than 3 hours late and you do not travel, file a TDR before departure for a full refund."
+   }
+  ]
+ }
+}

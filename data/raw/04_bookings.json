@@ -1,0 +1,839 @@
+{
+ "step": "04_bookings",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:02:42+05:30",
+ "seconds": 65.1,
+ "attempt": 1,
+ "prompt_file": "data/prompts/04_bookings.txt",
+ "final_prompt": "Create exactly 50 bookings for Ujjwal Rail. Today is day 0 = 2026-11-21 (Sat).\nPassengers: P001 (Arjun Singh, Delhi), P002 (Priya Sharma, Mumbai), P003 (Rahul Patel, Pune), P004 (Sunita Reddy, Nagpur), P005 (Amitabh Joshi, Bhopal), P006 (Kavita Deshmukh, Kalyan), P007 (Suresh Kumar, Agra), P008 (Meera Iyer, Delhi), P009 (Deepak Mehta, Jhansi), P010 (Anjali Gupta, Pune), P011 (Rajesh Nair, Solapur), P012 (Neha Kulkarni, Nashik), P013 (Vikram Rao, Wardha), P014 (Sneha Bhatia, Mumbai), P015 (Manoj Verma, Bhopal), P016 (Aisha Khan, Delhi), P017 (Tarun Singh, Agra), P018 (Pooja Mishra, Nagpur), P019 (Karan Malhotra, Bhusawal), P020 (Lata Choudhary, Itarsi), P021 (Sameer Ali, Wardha), P022 (Ritu Sharma, Solapur), P023 (Gaurav Chauhan, Bhusawal), P024 (Divya Nair, Itarsi), P025 (Harpreet Singh, Solapur)\nTrains (route in order; runs_on = days the train leaves its first station):\n- 12123 Vidarbha Express: CSMT -> KYN -> PUNE -> NGP; runs Daily; classes SL,3A,2A\n- 12456 Maharashtra Express: LTT -> KYN -> BSR -> NGP; runs Mon,Wed,Fri; classes SL,3A,2A\n- 13001 Deccan Day Special: PUNE -> NASH -> KYN -> CSMT; runs Daily; classes CC\n- 14002 Northbound Express: NDLS -> AGC -> JHS -> BPL -> ITJ -> NGP; runs Tue,Thu,Sat; classes SL,3A\n- 15003 Delhi-Mumbai Superfast: NDLS -> DLI -> BSR -> PUNE -> CSMT; runs Daily; classes SL,3A,2A,1A\n- 16004 Madhya Pradesh Express: BPL -> JHS -> AGC -> NDLS; runs Mon,Wed,Fri; classes SL,3A\n- 01001 South Central Special: LTT -> NASH -> PUNE -> BSR -> NGP; runs Sun; classes SL,3A\n- 02002 Winter Festival Special: CSMT -> NASH -> WRD -> NGP; runs Fri,Sat; classes SL\n- 18006 Pune-Nagpur Superfast: PUNE -> BSR -> NGP; runs Daily; classes SL,3A,2A\n- 19007 Delhi Express: DLI -> NDLS -> AGC -> JHS -> BPL -> ITJ -> NGP; runs Mon,Tue,Wed,Thu,Fri; classes SL,3A,2A\n- 20008 Pune-Bhusawal-Nagpur Express: PUNE -> BSR -> NGP; runs Daily; classes SL,3A,2A\n- 21009 Nagpur-Delhi Night: NGP -> WRD -> BSR -> DLI -> NDLS; runs Daily; classes SL,3A\n- 22010 Kalyan Express: KYN -> CSMT -> LTT; runs Mon,Wed,Fri; classes SL,3A,2A\n- 01123 Agra Delhi Special: AGC -> NDLS -> DLI; runs Mon,Sun; classes SL,3A\n- 24012 Solapur Express: SLP -> PUNE -> CSMT; runs Daily; classes SL,3A,2A\n- 25013 Itarsi-Bhopal Intercity: ITJ -> BPL; runs Daily; classes CC\n- 26014 Jhansi-Agra Express: JHS -> AGC; runs Tue,Thu; classes SL,3A\n- 27015 Bhusawal-Nashik Shuttle: BSR -> NASH -> KYN; runs Daily; classes CC\n- 28016 Delhi-Nagpur Weekly: NDLS -> DLI -> BSR -> NGP; runs Wed; classes SL,3A,2A\n- 29017 Pune Night Express: PUNE -> BSR -> NGP; runs Daily; classes SL,3A,2A\n- 30018 Bhopal-Jhansi Express: BPL -> JHS -> AGC -> NDLS; runs Mon,Wed,Fri; classes SL,3A\n- 31019 Solapur-Bhusawal Express: SLP -> BSR -> NGP; runs Daily; classes SL,3A,2A\n- 02020 Delhi-Nashik Special: NDLS -> NASH -> PUNE -> CSMT; runs Sat; classes SL\n- 33021 Pune-Wardha Express: PUNE -> WRD -> NGP; runs Daily; classes SL,3A\n- 34022 Kalyan-Nagpur Express: KYN -> BSR -> NGP; runs Daily; classes SL,3A,2A\n\nRules:\n- passenger_id: from the list, but NEVER use P025 (P025 must have no bookings). Give about 10 passengers\n  2-3 bookings each.\n- day: integer offset of the date the train leaves its FIRST station (0 = today). The train must run on that\n  weekday. Upcoming journeys use day 0..13; past journeys use day -30..-1.\n- from / to: two stations on that train's route, from before to.\n- class: one of that train's classes.\n- status counts: CONFIRMED 22, RAC 6, WAITLISTED 6, CANCELLED 9, TRAIN_CANCELLED 7.\n  RAC and WAITLISTED must be upcoming (day 0..13). TRAIN_CANCELLED should mostly be past (day -20..-2).\n  CONFIRMED: mostly upcoming, about 5 past (completed journeys).\n- travellers: 1 to 4 people, each with an invented name and age (the booking passenger is usually one of them).\nSchema: {\"bookings\": [{\"passenger_id\": str, \"train_no\": str, \"day\": int, \"from\": str, \"to\": str,\n  \"class\": str, \"status\": str, \"travellers\": [{\"name\": str, \"age\": int}]}]}",
+ "response": {
+  "bookings": [
+   {
+    "passenger_id": "P001",
+    "train_no": "12123",
+    "day": 2,
+    "from": "CSMT",
+    "to": "PUNE",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Arjun Singh",
+      "age": 30
+     },
+     {
+      "name": "Rohit Kumar",
+      "age": 28
+     }
+    ]
+   },
+   {
+    "passenger_id": "P001",
+    "train_no": "12123",
+    "day": 4,
+    "from": "CSMT",
+    "to": "PUNE",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Arjun Singh",
+      "age": 30
+     },
+     {
+      "name": "Anita Singh",
+      "age": 27
+     }
+    ]
+   },
+   {
+    "passenger_id": "P001",
+    "train_no": "02020",
+    "day": 0,
+    "from": "NDLS",
+    "to": "NASH",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Arjun Singh",
+      "age": 30
+     }
+    ]
+   },
+   {
+    "passenger_id": "P002",
+    "train_no": "12456",
+    "day": 2,
+    "from": "LTT",
+    "to": "NGP",
+    "class": "2A",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Priya Sharma",
+      "age": 28
+     },
+     {
+      "name": "Vikram Sharma",
+      "age": 5
+     }
+    ]
+   },
+   {
+    "passenger_id": "P002",
+    "train_no": "19007",
+    "day": 9,
+    "from": "DLI",
+    "to": "BPL",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Priya Sharma",
+      "age": 28
+     }
+    ]
+   },
+   {
+    "passenger_id": "P002",
+    "train_no": "01001",
+    "day": 1,
+    "from": "LTT",
+    "to": "BSR",
+    "class": "SL",
+    "status": "WAITLISTED",
+    "travellers": [
+     {
+      "name": "Priya Sharma",
+      "age": 28
+     },
+     {
+      "name": "Neha Sharma",
+      "age": 3
+     }
+    ]
+   },
+   {
+    "passenger_id": "P003",
+    "train_no": "13001",
+    "day": 5,
+    "from": "PUNE",
+    "to": "CSMT",
+    "class": "CC",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Rahul Patel",
+      "age": 35
+     }
+    ]
+   },
+   {
+    "passenger_id": "P003",
+    "train_no": "33021",
+    "day": 6,
+    "from": "PUNE",
+    "to": "NGP",
+    "class": "3A",
+    "status": "RAC",
+    "travellers": [
+     {
+      "name": "Rahul Patel",
+      "age": 35
+     },
+     {
+      "name": "Sonia Patel",
+      "age": 30
+     }
+    ]
+   },
+   {
+    "passenger_id": "P003",
+    "train_no": "26014",
+    "day": 10,
+    "from": "JHS",
+    "to": "AGC",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Rahul Patel",
+      "age": 35
+     }
+    ]
+   },
+   {
+    "passenger_id": "P004",
+    "train_no": "14002",
+    "day": 3,
+    "from": "NDLS",
+    "to": "ITJ",
+    "class": "3A",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Sunita Reddy",
+      "age": 40
+     },
+     {
+      "name": "Amit Reddy",
+      "age": 12
+     }
+    ]
+   },
+   {
+    "passenger_id": "P004",
+    "train_no": "21009",
+    "day": 7,
+    "from": "NGP",
+    "to": "DLI",
+    "class": "SL",
+    "status": "WAITLISTED",
+    "travellers": [
+     {
+      "name": "Sunita Reddy",
+      "age": 40
+     }
+    ]
+   },
+   {
+    "passenger_id": "P004",
+    "train_no": "30018",
+    "day": 9,
+    "from": "BPL",
+    "to": "NDLS",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Sunita Reddy",
+      "age": 40
+     },
+     {
+      "name": "Kavita Reddy",
+      "age": 8
+     }
+    ]
+   },
+   {
+    "passenger_id": "P005",
+    "train_no": "24012",
+    "day": 8,
+    "from": "SLP",
+    "to": "CSMT",
+    "class": "2A",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Amitabh Joshi",
+      "age": 45
+     },
+     {
+      "name": "Rohit Joshi",
+      "age": 20
+     }
+    ]
+   },
+   {
+    "passenger_id": "P005",
+    "train_no": "25013",
+    "day": -5,
+    "from": "ITJ",
+    "to": "BPL",
+    "class": "CC",
+    "status": "CANCELLED",
+    "travellers": [
+     {
+      "name": "Amitabh Joshi",
+      "age": 45
+     }
+    ]
+   },
+   {
+    "passenger_id": "P005",
+    "train_no": "34022",
+    "day": -10,
+    "from": "KYN",
+    "to": "NGP",
+    "class": "SL",
+    "status": "TRAIN_CANCELLED",
+    "travellers": [
+     {
+      "name": "Amitabh Joshi",
+      "age": 45
+     }
+    ]
+   },
+   {
+    "passenger_id": "P006",
+    "train_no": "22010",
+    "day": 2,
+    "from": "KYN",
+    "to": "LTT",
+    "class": "2A",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Kavita Deshmukh",
+      "age": 32
+     }
+    ]
+   },
+   {
+    "passenger_id": "P006",
+    "train_no": "02002",
+    "day": 6,
+    "from": "CSMT",
+    "to": "NGP",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Kavita Deshmukh",
+      "age": 32
+     },
+     {
+      "name": "Maya Deshmukh",
+      "age": 5
+     }
+    ]
+   },
+   {
+    "passenger_id": "P006",
+    "train_no": "26014",
+    "day": -11,
+    "from": "JHS",
+    "to": "AGC",
+    "class": "3A",
+    "status": "TRAIN_CANCELLED",
+    "travellers": [
+     {
+      "name": "Kavita Deshmukh",
+      "age": 32
+     }
+    ]
+   },
+   {
+    "passenger_id": "P007",
+    "train_no": "01123",
+    "day": 9,
+    "from": "AGC",
+    "to": "DLI",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Suresh Kumar",
+      "age": 38
+     }
+    ]
+   },
+   {
+    "passenger_id": "P007",
+    "train_no": "14002",
+    "day": 12,
+    "from": "AGC",
+    "to": "BPL",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Suresh Kumar",
+      "age": 38
+     },
+     {
+      "name": "Rita Kumar",
+      "age": 10
+     }
+    ]
+   },
+   {
+    "passenger_id": "P007",
+    "train_no": "26014",
+    "day": -4,
+    "from": "JHS",
+    "to": "AGC",
+    "class": "SL",
+    "status": "TRAIN_CANCELLED",
+    "travellers": [
+     {
+      "name": "Suresh Kumar",
+      "age": 38
+     }
+    ]
+   },
+   {
+    "passenger_id": "P008",
+    "train_no": "15003",
+    "day": 0,
+    "from": "NDLS",
+    "to": "PUNE",
+    "class": "2A",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Meera Iyer",
+      "age": 29
+     },
+     {
+      "name": "Aarav Iyer",
+      "age": 2
+     }
+    ]
+   },
+   {
+    "passenger_id": "P008",
+    "train_no": "34022",
+    "day": 3,
+    "from": "KYN",
+    "to": "NGP",
+    "class": "3A",
+    "status": "RAC",
+    "travellers": [
+     {
+      "name": "Meera Iyer",
+      "age": 29
+     }
+    ]
+   },
+   {
+    "passenger_id": "P008",
+    "train_no": "28016",
+    "day": 4,
+    "from": "NDLS",
+    "to": "NGP",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Meera Iyer",
+      "age": 29
+     }
+    ]
+   },
+   {
+    "passenger_id": "P009",
+    "train_no": "19007",
+    "day": 5,
+    "from": "DLI",
+    "to": "NGP",
+    "class": "2A",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Deepak Mehta",
+      "age": 34
+     }
+    ]
+   },
+   {
+    "passenger_id": "P009",
+    "train_no": "21009",
+    "day": -6,
+    "from": "NGP",
+    "to": "BSR",
+    "class": "SL",
+    "status": "CANCELLED",
+    "travellers": [
+     {
+      "name": "Deepak Mehta",
+      "age": 34
+     }
+    ]
+   },
+   {
+    "passenger_id": "P009",
+    "train_no": "02002",
+    "day": -11,
+    "from": "CSMT",
+    "to": "NGP",
+    "class": "SL",
+    "status": "TRAIN_CANCELLED",
+    "travellers": [
+     {
+      "name": "Deepak Mehta",
+      "age": 34
+     }
+    ]
+   },
+   {
+    "passenger_id": "P010",
+    "train_no": "13001",
+    "day": 1,
+    "from": "PUNE",
+    "to": "KYN",
+    "class": "CC",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Anjali Gupta",
+      "age": 27
+     }
+    ]
+   },
+   {
+    "passenger_id": "P010",
+    "train_no": "33021",
+    "day": 9,
+    "from": "PUNE",
+    "to": "NGP",
+    "class": "SL",
+    "status": "WAITLISTED",
+    "travellers": [
+     {
+      "name": "Anjali Gupta",
+      "age": 27
+     },
+     {
+      "name": "Rohit Gupta",
+      "age": 4
+     }
+    ]
+   },
+   {
+    "passenger_id": "P010",
+    "train_no": "24012",
+    "day": -2,
+    "from": "SLP",
+    "to": "PUNE",
+    "class": "2A",
+    "status": "CANCELLED",
+    "travellers": [
+     {
+      "name": "Anjali Gupta",
+      "age": 27
+     }
+    ]
+   },
+   {
+    "passenger_id": "P011",
+    "train_no": "26014",
+    "day": 10,
+    "from": "JHS",
+    "to": "AGC",
+    "class": "3A",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Rajesh Nair",
+      "age": 40
+     }
+    ]
+   },
+   {
+    "passenger_id": "P011",
+    "train_no": "21009",
+    "day": 11,
+    "from": "NGP",
+    "to": "DLI",
+    "class": "3A",
+    "status": "RAC",
+    "travellers": [
+     {
+      "name": "Rajesh Nair",
+      "age": 40
+     },
+     {
+      "name": "Sita Nair",
+      "age": 12
+     }
+    ]
+   },
+   {
+    "passenger_id": "P011",
+    "train_no": "01123",
+    "day": -13,
+    "from": "AGC",
+    "to": "NDLS",
+    "class": "SL",
+    "status": "TRAIN_CANCELLED",
+    "travellers": [
+     {
+      "name": "Rajesh Nair",
+      "age": 40
+     }
+    ]
+   },
+   {
+    "passenger_id": "P012",
+    "train_no": "27015",
+    "day": 2,
+    "from": "BSR",
+    "to": "KYN",
+    "class": "CC",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Neha Kulkarni",
+      "age": 26
+     }
+    ]
+   },
+   {
+    "passenger_id": "P012",
+    "train_no": "02020",
+    "day": 0,
+    "from": "NDLS",
+    "to": "CSMT",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Neha Kulkarni",
+      "age": 26
+     },
+     {
+      "name": "Rohan Kulkarni",
+      "age": 3
+     }
+    ]
+   },
+   {
+    "passenger_id": "P012",
+    "train_no": "19007",
+    "day": -9,
+    "from": "DLI",
+    "to": "BPL",
+    "class": "SL",
+    "status": "CANCELLED",
+    "travellers": [
+     {
+      "name": "Neha Kulkarni",
+      "age": 26
+     }
+    ]
+   },
+   {
+    "passenger_id": "P013",
+    "train_no": "12123",
+    "day": 4,
+    "from": "CSMT",
+    "to": "NGP",
+    "class": "SL",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Vikram Rao",
+      "age": 33
+     }
+    ]
+   },
+   {
+    "passenger_id": "P013",
+    "train_no": "34022",
+    "day": 5,
+    "from": "KYN",
+    "to": "NGP",
+    "class": "2A",
+    "status": "RAC",
+    "travellers": [
+     {
+      "name": "Vikram Rao",
+      "age": 33
+     },
+     {
+      "name": "Anita Rao",
+      "age": 30
+     }
+    ]
+   },
+   {
+    "passenger_id": "P013",
+    "train_no": "30018",
+    "day": -14,
+    "from": "BPL",
+    "to": "NDLS",
+    "class": "SL",
+    "status": "TRAIN_CANCELLED",
+    "travellers": [
+     {
+      "name": "Vikram Rao",
+      "age": 33
+     }
+    ]
+   },
+   {
+    "passenger_id": "P014",
+    "train_no": "12456",
+    "day": 9,
+    "from": "LTT",
+    "to": "KYN",
+    "class": "3A",
+    "status": "CONFIRMED",
+    "travellers": [
+     {
+      "name": "Sneha Bhatia",
+      "age": 29
+     }
+    ]
+   },
+   {
+    "passenger_id": "P014",
+    "train_no": "02002",
+    "day": 6,
+    "from": "CSMT",
+    "to": "NGP",
+    "class": "SL",
+    "status": "WAITLISTED",
+    "travellers": [
+     {
+      "name": "Sneha Bhatia",
+      "age": 29
+     },
+     {
+      "name": "Riya Bhatia",
+      "age": 2
+     }
+    ]
+   },
+   {
+    "passenger_id": "P014",
+    "train_no": "26014",
+    "day": -15,
+    "from": "JHS",
+    "to": "AGC",
+    "class": "SL",
+    "status": "CANCELLED",
+    "travellers": [
+     {
+      "name": "Sneha Bhatia",
+      "age": 29
+     }
+    ]
+   },
+   {
+    "passenger_id": "P015",
+    "train_no": "15003",
+    "day": 7,
+    "from": "NDLS",
+    "to": "CSMT",
+    "class": "1A",
+    "status": "RAC",
+    "travellers": [
+     {
+      "name": "Manoj Verma",
+      "age": 45
+     },
+     {
+      "name": "Priya Verma",
+      "age": 42
+     }
+    ]
+   },
+   {
+    "passenger_id": "P015",
+    "train_no": "19007",
+    "day": 10,
+    "from": "DLI",
+    "to": "ITJ",
+    "class": "3A",
+    "status": "WAITLISTED",
+    "travellers": [
+     {
+      "name": "Manoj Verma",
+      "age": 45
+     }
+    ]
+   },
+   {
+    "passenger_id": "P015",
+    "train_no": "01123",
+    "day": -20,
+    "from": "AGC",
+    "to": "DLI",
+    "class": "SL",
+    "status": "TRAIN_CANCELLED",
+    "travellers": [
+     {
+      "name": "Manoj Verma",
+      "age": 45
+     }
+    ]
+   },
+   {
+    "passenger_id": "P016",
+    "train_no": "12456",
+    "day": 9,
+    "from": "LTT",
+    "to": "BSR",
+    "class": "2A",
+    "status": "WAITLISTED",
+    "travellers": [
+     {
+      "name": "Aisha Khan",
+      "age": 27
+     },
+     {
+      "name": "Zara Khan",
+      "age": 4
+     }
+    ]
+   },
+   {
+    "passenger_id": "P016",
+    "train_no": "14002",
+    "day": -8,
+    "from": "NDLS",
+    "to": "BPL",
+    "class": "3A",
+    "status": "CANCELLED",
+    "travellers": [
+     {
+      "name": "Aisha Khan",
+      "age": 27
+     }
+    ]
+   },
+   {
+    "passenger_id": "P016",
+    "train_no": "01123",
+    "day": -13,
+    "from": "AGC",
+    "to": "NDLS",
+    "class": "SL",
+    "status": "CANCELLED",
+    "travellers": [
+     {
+      "name": "Aisha Khan",
+      "age": 27
+     }
+    ]
+   },
+   {
+    "passenger_id": "P017",
+    "train_no": "34022",
+    "day": 11,
+    "from": "KYN",
+    "to": "NGP",
+    "class": "3A",
+    "status": "RAC",
+    "travellers": [
+     {
+      "name": "Tarun Singh",
+      "age": 35
+     },
+     {
+      "name": "Neel Singh",
+      "age": 2
+     }
+    ]
+   },
+   {
+    "passenger_id": "P017",
+    "train_no": "26014",
+    "day": -4,
+    "from": "JHS",
+    "to": "AGC",
+    "class": "SL",
+    "status": "CANCELLED",
+    "travellers": [
+     {
+      "name": "Tarun Singh",
+      "age": 35
+     }
+    ]
+   }
+  ]
+ }
+}

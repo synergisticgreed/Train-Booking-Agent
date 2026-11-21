@@ -1,0 +1,17 @@
+{
+ "step": "05_doc_CIR-2026-08",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:05:08+05:30",
+ "seconds": 2.0,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_CIR-2026-08.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official circular (a notice that changes or adds to the rules).\nDocument: CIR-2026-08 \"Revision of the Sleeper class Tatkal charge\" (effective from 2026-10-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Revised Tatkal charges\": With effect from 2026-10-01, the Tatkal charge per passenger is SL Rs 175 (earlier Rs 150), 3A Rs 300, 2A Rs 400.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Revised Tatkal charges",
+    "text": "With effect from 2026-10-01, the Tatkal charge per passenger is SL Rs 175 (earlier Rs 150), 3A Rs 300, and 2A Rs 400. These charges apply to all Tatkal bookings in Sleeper, AC 3 Tier and AC 2 Tier classes."
+   }
+  ]
+ }
+}

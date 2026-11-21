@@ -1,0 +1,20 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official rule document.
+Document: RUL-BKG-01 "Booking tickets" (effective from 2025-04-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. Who can book": Any person aged 12 or more with an Ujjwal Rail account can book for themselves and others.
+- "2. Advance reservation period": Reservations open 60 days before the journey date (day of departure from the origin station not counted).
+- "3. Passengers per booking": At most 6 passengers per booking.
+- "4. Payment and e-tickets": Payment is taken at booking. The e-ticket on the phone (SMS or app) plus an original ID is valid; no printout needed.
+- "5. Confirming changes": Any booking, cancellation or change made through the assistant is first shown as a preview; it happens only after the passenger presses Confirm within 15 minutes, otherwise the proposal expires.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

@@ -1,0 +1,16 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official circular (a notice that changes or adds to the rules).
+Document: CIR-2026-11 "पहचान पत्र: डिजिटल दस्तावेज़ मान्य" (effective from 2026-09-02). Language: Hindi (Devanagari script).
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. डिजिटल पहचान पत्र": 2026-09-02 से DigiLocker में रखे आधार और ड्राइविंग लाइसेंस, तथा m-Aadhaar ऐप, यात्रा के दौरान मान्य पहचान पत्र होंगे। फोटो कॉपी या स्क्रीनशॉट मान्य नहीं है।
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

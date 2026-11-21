@@ -1,0 +1,23 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Create exactly 15 stations for Ujjwal Rail.
+Include these 7 exactly (same code, name and city):
+- CSMT: Mumbai CSMT (city Mumbai)
+- LTT: Lokmanya Tilak Terminus (city Mumbai)
+- KYN: Kalyan Junction (city Kalyan)
+- PUNE: Pune Junction (city Pune)
+- NGP: Nagpur Junction (city Nagpur)
+- NDLS: New Delhi (city Delhi)
+- DLI: Old Delhi (city Delhi)
+Add 8 more stations in central/western/northern India that lie between Mumbai, Pune, Nagpur and Delhi
+(for example on routes through Nashik, Bhusawal, Itarsi, Bhopal, Jhansi, Agra, Wardha, Aurangabad, Solapur).
+For every station give other_names: common alternative spellings / old names / abbreviations as a
+comma-separated string (CSMT must include "Bombay,CST,Bombay VT,Mumbai CST"; PUNE must include "Poona";
+DLI must include "Delhi Junction"; LTT must include "Kurla"). Use "" when there are none.
+Station codes: 2-5 capital letters, unique.
+Schema: {"stations": [{"station_code": str, "name": str, "other_names": str, "city": str}]}

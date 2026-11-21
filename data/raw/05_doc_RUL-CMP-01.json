@@ -1,0 +1,29 @@
+{
+ "step": "05_doc_RUL-CMP-01",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:04:59+05:30",
+ "seconds": 2.8,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_RUL-CMP-01.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official rule document.\nDocument: RUL-CMP-01 \"Complaints and help\" (effective from 2025-04-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. How to complain\": Complaints can be made in the app, through the assistant, or to on-board staff.\n- \"2. What we need\": Booking id, train number, date and a short description. Every complaint gets a reference number.\n- \"3. Safety on board\": In an emergency or for harassment, tell the TTE or guard immediately; the Safety & Security desk is informed.\n- \"4. Outcomes\": Staff review each complaint and decide the outcome; the assistant cannot promise compensation or refunds.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. How to complain",
+    "text": "You can lodge a complaint using the Ujjwal Rail mobile app, by speaking with the virtual assistant, or by informing any on‑board staff."
+   },
+   {
+    "section": "2. What we need",
+    "text": "When you complain, provide your booking ID, the train number, the travel date, and a brief description of the issue. Each complaint will be assigned a reference number."
+   },
+   {
+    "section": "3. Safety on board",
+    "text": "If you face an emergency or any harassment, report it immediately to the TTE or the guard. The Safety & Security desk will be notified."
+   },
+   {
+    "section": "4. Outcomes",
+    "text": "Our staff will review every complaint and determine the appropriate outcome. The virtual assistant is not authorized to promise compensation or refunds."
+   }
+  ]
+ }
+}

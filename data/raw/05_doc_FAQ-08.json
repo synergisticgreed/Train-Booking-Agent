@@ -1,0 +1,17 @@
+{
+ "step": "05_doc_FAQ-08",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:06:32+05:30",
+ "seconds": 4.1,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_FAQ-08.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail helpdesk FAQ answer.\nDocument: FAQ-08 \"When does Tatkal booking open?\" (effective from 2025-06-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"Answer\": One day before the journey: 10:00 for AC classes and 11:00 for Sleeper.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "Answer",
+    "text": "Tatkal booking opens one day before your journey. For AC classes it opens at 10:00, and for Sleeper class it opens at 11:00."
+   }
+  ]
+ }
+}

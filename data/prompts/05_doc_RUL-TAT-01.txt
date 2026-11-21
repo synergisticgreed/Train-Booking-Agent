@@ -1,0 +1,18 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official rule document.
+Document: RUL-TAT-01 "Tatkal tickets" (effective from 2025-04-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. Booking window": Tatkal booking opens one day before the journey date: 10:00 for AC classes and 11:00 for SL.
+- "2. Tatkal charges": Tatkal charge per passenger on top of the fare: SL Rs 150, 3A Rs 300, 2A Rs 400.
+- "3. Cancellation": No refund on cancelling a confirmed Tatkal ticket. Waitlisted Tatkal tickets are refunded as normal waitlisted tickets.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

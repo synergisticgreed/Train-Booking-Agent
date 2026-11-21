@@ -1,0 +1,49 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Create exactly 50 bookings for Ujjwal Rail. Today is day 0 = 2026-11-21 (Sat).
+Passengers: P001 (Arjun Singh, Delhi), P002 (Priya Sharma, Mumbai), P003 (Rahul Patel, Pune), P004 (Sunita Reddy, Nagpur), P005 (Amitabh Joshi, Bhopal), P006 (Kavita Deshmukh, Kalyan), P007 (Suresh Kumar, Agra), P008 (Meera Iyer, Delhi), P009 (Deepak Mehta, Jhansi), P010 (Anjali Gupta, Pune), P011 (Rajesh Nair, Solapur), P012 (Neha Kulkarni, Nashik), P013 (Vikram Rao, Wardha), P014 (Sneha Bhatia, Mumbai), P015 (Manoj Verma, Bhopal), P016 (Aisha Khan, Delhi), P017 (Tarun Singh, Agra), P018 (Pooja Mishra, Nagpur), P019 (Karan Malhotra, Bhusawal), P020 (Lata Choudhary, Itarsi), P021 (Sameer Ali, Wardha), P022 (Ritu Sharma, Solapur), P023 (Gaurav Chauhan, Bhusawal), P024 (Divya Nair, Itarsi), P025 (Harpreet Singh, Solapur)
+Trains (route in order; runs_on = days the train leaves its first station):
+- 12123 Vidarbha Express: CSMT -> KYN -> PUNE -> NGP; runs Daily; classes SL,3A,2A
+- 12456 Maharashtra Express: LTT -> KYN -> BSR -> NGP; runs Mon,Wed,Fri; classes SL,3A,2A
+- 13001 Deccan Day Special: PUNE -> NASH -> KYN -> CSMT; runs Daily; classes CC
+- 14002 Northbound Express: NDLS -> AGC -> JHS -> BPL -> ITJ -> NGP; runs Tue,Thu,Sat; classes SL,3A
+- 15003 Delhi-Mumbai Superfast: NDLS -> DLI -> BSR -> PUNE -> CSMT; runs Daily; classes SL,3A,2A,1A
+- 16004 Madhya Pradesh Express: BPL -> JHS -> AGC -> NDLS; runs Mon,Wed,Fri; classes SL,3A
+- 01001 South Central Special: LTT -> NASH -> PUNE -> BSR -> NGP; runs Sun; classes SL,3A
+- 02002 Winter Festival Special: CSMT -> NASH -> WRD -> NGP; runs Fri,Sat; classes SL
+- 18006 Pune-Nagpur Superfast: PUNE -> BSR -> NGP; runs Daily; classes SL,3A,2A
+- 19007 Delhi Express: DLI -> NDLS -> AGC -> JHS -> BPL -> ITJ -> NGP; runs Mon,Tue,Wed,Thu,Fri; classes SL,3A,2A
+- 20008 Pune-Bhusawal-Nagpur Express: PUNE -> BSR -> NGP; runs Daily; classes SL,3A,2A
+- 21009 Nagpur-Delhi Night: NGP -> WRD -> BSR -> DLI -> NDLS; runs Daily; classes SL,3A
+- 22010 Kalyan Express: KYN -> CSMT -> LTT; runs Mon,Wed,Fri; classes SL,3A,2A
+- 01123 Agra Delhi Special: AGC -> NDLS -> DLI; runs Mon,Sun; classes SL,3A
+- 24012 Solapur Express: SLP -> PUNE -> CSMT; runs Daily; classes SL,3A,2A
+- 25013 Itarsi-Bhopal Intercity: ITJ -> BPL; runs Daily; classes CC
+- 26014 Jhansi-Agra Express: JHS -> AGC; runs Tue,Thu; classes SL,3A
+- 27015 Bhusawal-Nashik Shuttle: BSR -> NASH -> KYN; runs Daily; classes CC
+- 28016 Delhi-Nagpur Weekly: NDLS -> DLI -> BSR -> NGP; runs Wed; classes SL,3A,2A
+- 29017 Pune Night Express: PUNE -> BSR -> NGP; runs Daily; classes SL,3A,2A
+- 30018 Bhopal-Jhansi Express: BPL -> JHS -> AGC -> NDLS; runs Mon,Wed,Fri; classes SL,3A
+- 31019 Solapur-Bhusawal Express: SLP -> BSR -> NGP; runs Daily; classes SL,3A,2A
+- 02020 Delhi-Nashik Special: NDLS -> NASH -> PUNE -> CSMT; runs Sat; classes SL
+- 33021 Pune-Wardha Express: PUNE -> WRD -> NGP; runs Daily; classes SL,3A
+- 34022 Kalyan-Nagpur Express: KYN -> BSR -> NGP; runs Daily; classes SL,3A,2A
+
+Rules:
+- passenger_id: from the list, but NEVER use P025 (P025 must have no bookings). Give about 10 passengers
+  2-3 bookings each.
+- day: integer offset of the date the train leaves its FIRST station (0 = today). The train must run on that
+  weekday. Upcoming journeys use day 0..13; past journeys use day -30..-1.
+- from / to: two stations on that train's route, from before to.
+- class: one of that train's classes.
+- status counts: CONFIRMED 22, RAC 6, WAITLISTED 6, CANCELLED 9, TRAIN_CANCELLED 7.
+  RAC and WAITLISTED must be upcoming (day 0..13). TRAIN_CANCELLED should mostly be past (day -20..-2).
+  CONFIRMED: mostly upcoming, about 5 past (completed journeys).
+- travellers: 1 to 4 people, each with an invented name and age (the booking passenger is usually one of them).
+Schema: {"bookings": [{"passenger_id": str, "train_no": str, "day": int, "from": str, "to": str,
+  "class": str, "status": str, "travellers": [{"name": str, "age": int}]}]}

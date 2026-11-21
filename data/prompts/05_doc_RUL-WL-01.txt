@@ -1,0 +1,19 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official rule document.
+Document: RUL-WL-01 "Waitlist and RAC" (effective from 2025-04-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. RAC": RAC (Reservation Against Cancellation) passengers share a side-lower berth and can travel; they get a full berth if one is freed.
+- "2. Waitlist": Waitlisted (WL) passengers move up as others cancel. A WL number cannot be moved up on request by anyone.
+- "3. Charting": The reservation chart is prepared 4 hours before departure. Tickets still fully waitlisted after charting are cancelled automatically and refunded as in RUL-CAN-01 section 4; such passengers may not board.
+- "4. Partly confirmed bookings": If some travellers on a booking are confirmed and others waitlisted, the confirmed travellers may travel; waitlisted ones may not after charting.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

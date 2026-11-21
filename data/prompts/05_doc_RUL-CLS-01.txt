@@ -1,0 +1,17 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official rule document.
+Document: RUL-CLS-01 "Classes of travel" (effective from 2025-04-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. Classes": SL Sleeper (non-AC berths), 3A AC Three Tier, 2A AC Two Tier, 1A AC First Class (lockable cabins and coupes), CC AC Chair Car (seats, day trains).
+- "2. Berths and seats per train": Bookable berths or seats per train per class: SL 72, 3A 64, 2A 46, 1A 18, CC 78.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

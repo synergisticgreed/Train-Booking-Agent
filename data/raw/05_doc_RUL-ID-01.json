@@ -1,0 +1,25 @@
+{
+ "step": "05_doc_RUL-ID-01",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:04:23+05:30",
+ "seconds": 7.7,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_RUL-ID-01.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official rule document.\nDocument: RUL-ID-01 \"Identity proof\" (effective from 2025-04-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Accepted documents\": Original Aadhaar card, passport, driving licence, voter ID, PAN card, or a government or college photo ID card.\n- \"2. Who must carry ID\": At least one traveller on each booking must carry an accepted original ID; for Tatkal, every traveller.\n- \"3. Without ID\": A passenger who cannot show accepted ID is treated as travelling without a ticket.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Accepted documents",
+    "text": "Passengers must present one of the following original documents: Aadhaar card, passport, driving licence, voter ID, PAN card, or a government or college photo ID card."
+   },
+   {
+    "section": "2. Who must carry ID",
+    "text": "At least one traveller on each booking must carry an accepted original ID. For Tatkal bookings, every traveller must carry an accepted original ID."
+   },
+   {
+    "section": "3. Without ID",
+    "text": "A passenger who cannot show an accepted ID is treated as travelling without a ticket."
+   }
+  ]
+ }
+}

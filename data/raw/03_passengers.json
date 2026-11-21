@@ -1,0 +1,188 @@
+{
+ "step": "03_passengers",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:01:37+05:30",
+ "seconds": 11.4,
+ "attempt": 1,
+ "prompt_file": "data/prompts/03_passengers.txt",
+ "final_prompt": "Create exactly 25 fictional Ujjwal Rail passengers with ids P001 to P025.\n- name: a realistic but invented Indian full name; vary regions and genders.\n- home_city: one of ['Agra', 'Bhopal', 'Bhusawal', 'Delhi', 'Itarsi', 'Jhansi', 'Kalyan', 'Mumbai', 'Nagpur', 'Nashik', 'Pune', 'Solapur', 'Wardha']; use at least 8 different cities.\n- preferred_language: \"en\", \"hi\" or \"hinglish\" (at least 6 of each).\n- phone_last4: 4 random digits (we store only the last 4 digits of a phone number).\nSchema: {\"passengers\": [{\"passenger_id\": str, \"name\": str, \"home_city\": str,\n  \"preferred_language\": str, \"phone_last4\": str}]}",
+ "response": {
+  "passengers": [
+   {
+    "passenger_id": "P001",
+    "name": "Arjun Singh",
+    "home_city": "Delhi",
+    "preferred_language": "en",
+    "phone_last4": "4832"
+   },
+   {
+    "passenger_id": "P002",
+    "name": "Priya Sharma",
+    "home_city": "Mumbai",
+    "preferred_language": "hi",
+    "phone_last4": "7501"
+   },
+   {
+    "passenger_id": "P003",
+    "name": "Rahul Patel",
+    "home_city": "Pune",
+    "preferred_language": "hinglish",
+    "phone_last4": "1298"
+   },
+   {
+    "passenger_id": "P004",
+    "name": "Sunita Reddy",
+    "home_city": "Nagpur",
+    "preferred_language": "en",
+    "phone_last4": "5640"
+   },
+   {
+    "passenger_id": "P005",
+    "name": "Amitabh Joshi",
+    "home_city": "Bhopal",
+    "preferred_language": "hi",
+    "phone_last4": "3321"
+   },
+   {
+    "passenger_id": "P006",
+    "name": "Kavita Deshmukh",
+    "home_city": "Kalyan",
+    "preferred_language": "hinglish",
+    "phone_last4": "9876"
+   },
+   {
+    "passenger_id": "P007",
+    "name": "Suresh Kumar",
+    "home_city": "Agra",
+    "preferred_language": "en",
+    "phone_last4": "4105"
+   },
+   {
+    "passenger_id": "P008",
+    "name": "Meera Iyer",
+    "home_city": "Delhi",
+    "preferred_language": "hi",
+    "phone_last4": "2759"
+   },
+   {
+    "passenger_id": "P009",
+    "name": "Deepak Mehta",
+    "home_city": "Jhansi",
+    "preferred_language": "hinglish",
+    "phone_last4": "6083"
+   },
+   {
+    "passenger_id": "P010",
+    "name": "Anjali Gupta",
+    "home_city": "Pune",
+    "preferred_language": "en",
+    "phone_last4": "1934"
+   },
+   {
+    "passenger_id": "P011",
+    "name": "Rajesh Nair",
+    "home_city": "Solapur",
+    "preferred_language": "hi",
+    "phone_last4": "8420"
+   },
+   {
+    "passenger_id": "P012",
+    "name": "Neha Kulkarni",
+    "home_city": "Nashik",
+    "preferred_language": "hinglish",
+    "phone_last4": "7512"
+   },
+   {
+    "passenger_id": "P013",
+    "name": "Vikram Rao",
+    "home_city": "Wardha",
+    "preferred_language": "en",
+    "phone_last4": "3698"
+   },
+   {
+    "passenger_id": "P014",
+    "name": "Sneha Bhatia",
+    "home_city": "Mumbai",
+    "preferred_language": "hi",
+    "phone_last4": "0245"
+   },
+   {
+    "passenger_id": "P015",
+    "name": "Manoj Verma",
+    "home_city": "Bhopal",
+    "preferred_language": "hinglish",
+    "phone_last4": "5179"
+   },
+   {
+    "passenger_id": "P016",
+    "name": "Aisha Khan",
+    "home_city": "Delhi",
+    "preferred_language": "en",
+    "phone_last4": "8302"
+   },
+   {
+    "passenger_id": "P017",
+    "name": "Tarun Singh",
+    "home_city": "Agra",
+    "preferred_language": "hi",
+    "phone_last4": "4591"
+   },
+   {
+    "passenger_id": "P018",
+    "name": "Pooja Mishra",
+    "home_city": "Nagpur",
+    "preferred_language": "hinglish",
+    "phone_last4": "6720"
+   },
+   {
+    "passenger_id": "P019",
+    "name": "Karan Malhotra",
+    "home_city": "Bhusawal",
+    "preferred_language": "en",
+    "phone_last4": "3981"
+   },
+   {
+    "passenger_id": "P020",
+    "name": "Lata Choudhary",
+    "home_city": "Itarsi",
+    "preferred_language": "hi",
+    "phone_last4": "2147"
+   },
+   {
+    "passenger_id": "P021",
+    "name": "Sameer Ali",
+    "home_city": "Wardha",
+    "preferred_language": "hinglish",
+    "phone_last4": "9053"
+   },
+   {
+    "passenger_id": "P022",
+    "name": "Ritu Sharma",
+    "home_city": "Solapur",
+    "preferred_language": "en",
+    "phone_last4": "7610"
+   },
+   {
+    "passenger_id": "P023",
+    "name": "Gaurav Chauhan",
+    "home_city": "Bhusawal",
+    "preferred_language": "hi",
+    "phone_last4": "6428"
+   },
+   {
+    "passenger_id": "P024",
+    "name": "Divya Nair",
+    "home_city": "Itarsi",
+    "preferred_language": "hinglish",
+    "phone_last4": "3175"
+   },
+   {
+    "passenger_id": "P025",
+    "name": "Harpreet Singh",
+    "home_city": "Solapur",
+    "preferred_language": "en",
+    "phone_last4": "5890"
+   }
+  ]
+ }
+}

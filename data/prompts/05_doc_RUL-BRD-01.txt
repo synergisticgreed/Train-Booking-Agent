@@ -1,0 +1,18 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official rule document.
+Document: RUL-BRD-01 "Changing the boarding station" (effective from 2025-04-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. How to change": The boarding station can be changed once per booking to another stop of the same train before the destination.
+- "2. Cut-off": A change is allowed only more than 24 hours before the scheduled departure from the original boarding station.
+- "3. Fare": The fare does not change and nothing is refunded; the passenger loses the right to board at the original station.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

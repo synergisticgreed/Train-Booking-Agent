@@ -1,0 +1,33 @@
+{
+ "step": "05_doc_RUL-BKG-01",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:03:34+05:30",
+ "seconds": 51.9,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_RUL-BKG-01.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official rule document.\nDocument: RUL-BKG-01 \"Booking tickets\" (effective from 2025-04-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Who can book\": Any person aged 12 or more with an Ujjwal Rail account can book for themselves and others.\n- \"2. Advance reservation period\": Reservations open 60 days before the journey date (day of departure from the origin station not counted).\n- \"3. Passengers per booking\": At most 6 passengers per booking.\n- \"4. Payment and e-tickets\": Payment is taken at booking. The e-ticket on the phone (SMS or app) plus an original ID is valid; no printout needed.\n- \"5. Confirming changes\": Any booking, cancellation or change made through the assistant is first shown as a preview; it happens only after the passenger presses Confirm within 15 minutes, otherwise the proposal expires.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Who can book",
+    "text": "Any person aged 12 or more with an Ujjwal Rail account can book for themselves and others."
+   },
+   {
+    "section": "2. Advance reservation period",
+    "text": "Reservations open 60 days before the journey date, not counting the day of departure from the origin station."
+   },
+   {
+    "section": "3. Passengers per booking",
+    "text": "A maximum of 6 passengers may be included in a single booking."
+   },
+   {
+    "section": "4. Payment and e-tickets",
+    "text": "Payment is taken at the time of booking. The e-ticket delivered to the phone via SMS or the app, together with an original ID, is valid; a printed ticket is not required."
+   },
+   {
+    "section": "5. Confirming changes",
+    "text": "Any booking, cancellation or change made through the assistant is first shown as a preview. It is confirmed only when the passenger presses Confirm within 15 minutes; otherwise the proposal expires."
+   }
+  ]
+ }
+}

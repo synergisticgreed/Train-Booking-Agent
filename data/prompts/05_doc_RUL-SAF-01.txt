@@ -1,0 +1,19 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official rule document.
+Document: RUL-SAF-01 "Conduct and safety" (effective from 2025-04-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. Conduct": Passengers must not disturb others, occupy berths not allotted to them, or play loud music between 22:00 and 06:00.
+- "2. Women and children": Reserved berths for women travelling alone are kept where available; staff help is available on request.
+- "3. Smoking and alcohol": Smoking and alcohol are prohibited on trains and platforms.
+- "4. Emergencies": Use the emergency alarm only in real emergencies; misuse is an offence.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

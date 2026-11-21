@@ -1,0 +1,46 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Create exactly 25 trains for Ujjwal Rail using ONLY these station codes:
+- CSMT: Mumbai CSMT (Mumbai)
+- LTT: Lokmanya Tilak Terminus (Mumbai)
+- KYN: Kalyan Junction (Kalyan)
+- PUNE: Pune Junction (Pune)
+- NGP: Nagpur Junction (Nagpur)
+- NDLS: New Delhi (Delhi)
+- DLI: Old Delhi (Delhi)
+- BSR: Bhusawal Junction (Bhusawal)
+- NASH: Nashik Road (Nashik)
+- ITJ: Itarsi Junction (Itarsi)
+- BPL: Bhopal Junction (Bhopal)
+- JHS: Jhansi Junction (Jhansi)
+- AGC: Agra Cantt (Agra)
+- WRD: Wardha Junction (Wardha)
+- SLP: Solapur Junction (Solapur)
+
+Requirements:
+- train_no: 5 digits, unique. Include train 12123 "Vidarbha Express", running Daily
+  CSMT -> KYN -> PUNE -> NGP with classes SL, 3A, 2A (departs CSMT in the afternoon, reaches NGP next morning).
+- At least 5 trains (including 12123) go from PUNE to NGP, and at least 2 of them leave PUNE after 18:00.
+- At least 1 train must depart an INTERMEDIATE station between 00:00 and 03:30, i.e. after midnight,
+  the day after it left its origin (an overnight train).
+- At least 2 festival special trains: train_no starting with "01" or "02", name ending in "Special",
+  running only 1-3 days a week.
+- At least 6 trains are not Daily. runs_on is "Daily" or a list of 3-letter days ["Mon","Wed",...],
+  meaning the days the train leaves its ORIGIN station.
+- Use both Mumbai stations (CSMT and LTT) and both Delhi stations (NDLS and DLI) somewhere.
+- stops: 2 to 7 stops in travel order. Times are 24-hour "HH:MM". The first stop has arrival null,
+  the last stop has departure null. km is the cumulative distance from the origin (first stop 0),
+  strictly increasing. Times must be realistic for the distance (about 50-70 km/h average).
+- classes: a subset of ["SL","3A","2A","1A","CC"]. Use "CC" (chair car) only for day trains under 10 hours,
+  and then usually without sleeper classes.
+- full_fares: the fare in rupees for EACH class from the first to the last stop, roughly
+  SL 0.45/km, 3A 1.2/km, 2A 1.7/km, 1A 2.8/km, CC 1.0/km (round to a multiple of 5).
+- demand: "high", "medium" or "low" (how full the train usually is). At least 6 "high".
+Schema: {"trains": [{"train_no": str, "name": str, "runs_on": "Daily" | [str], "classes": [str],
+  "demand": str, "full_fares": {class: int},
+  "stops": [{"station_code": str, "arrival": str|null, "departure": str|null, "km": int}]}]}

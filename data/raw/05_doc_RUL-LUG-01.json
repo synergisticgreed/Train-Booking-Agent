@@ -1,0 +1,29 @@
+{
+ "step": "05_doc_RUL-LUG-01",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:04:32+05:30",
+ "seconds": 8.6,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_RUL-LUG-01.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official rule document.\nDocument: RUL-LUG-01 \"Luggage and pets\" (effective from 2025-04-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Free allowance\": Free luggage per passenger: 40 kg in SL and 50 kg in AC classes.\n- \"2. Excess luggage\": Luggage above the allowance must be booked at the station parcel office before departure.\n- \"3. Prohibited items\": No gas cylinders, fuel, fireworks, acids or other dangerous goods.\n- \"4. Pets\": One dog or cat may travel only in a 1A coupe booked in full by the same booking, with a pet charge of Rs 500 per pet and a vet certificate.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Free allowance",
+    "text": "Each passenger may carry up to 40 kg of luggage in Sleeper (SL) class and up to 50 kg in any AC class. The allowance applies per passenger for the entire journey."
+   },
+   {
+    "section": "2. Excess luggage",
+    "text": "If your luggage exceeds the free allowance, you must book the excess at the station parcel office before departure. No excess luggage will be accepted on board without prior booking."
+   },
+   {
+    "section": "3. Prohibited items",
+    "text": "The following items are strictly prohibited: gas cylinders, fuel, fireworks, acids and any other dangerous goods. Carrying any of these items may result in denial of carriage and penalties."
+   },
+   {
+    "section": "4. Pets",
+    "text": "Only one dog or cat is allowed per passenger and it may travel only in a 1A coupe that is booked in full under the same reservation. A pet charge of Rs 500 per pet applies and a valid veterinary certificate must be presented."
+   }
+  ]
+ }
+}

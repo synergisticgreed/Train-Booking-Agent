@@ -1,0 +1,19 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official rule document.
+Document: RUL-LUG-01 "Luggage and pets" (effective from 2025-04-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. Free allowance": Free luggage per passenger: 40 kg in SL and 50 kg in AC classes.
+- "2. Excess luggage": Luggage above the allowance must be booked at the station parcel office before departure.
+- "3. Prohibited items": No gas cylinders, fuel, fireworks, acids or other dangerous goods.
+- "4. Pets": One dog or cat may travel only in a 1A coupe booked in full by the same booking, with a pet charge of Rs 500 per pet and a vet certificate.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

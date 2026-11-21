@@ -1,0 +1,16 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail helpdesk FAQ answer.
+Document: FAQ-10 "Which ID proofs are accepted?" (effective from 2025-06-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "Answer": Original Aadhaar, passport, driving licence, voter ID, PAN card or a government/college photo ID.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

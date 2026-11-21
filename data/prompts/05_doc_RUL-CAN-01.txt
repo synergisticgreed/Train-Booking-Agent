@@ -1,0 +1,20 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official rule document.
+Document: RUL-CAN-01 "Cancellation and refunds" (effective from 2025-04-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. How to cancel": Cancel through the app, website or assistant up to departure. Partial cancellation of some travellers is allowed.
+- "2. Departure time used": All time limits are counted from the scheduled departure time of the train from the passenger's boarding station.
+- "3. Refund table": Per confirmed or RAC passenger. More than 48 hours before departure: flat charge (SL Rs 120, 3A Rs 180, 2A Rs 240, 1A Rs 300, CC Rs 90). More than 12 and up to 48 hours: 25% of the fare, but not less than the flat charge. More than 4 and up to 12 hours: 50% of the fare, but not less than the flat charge. 4 hours or less before departure (after the chart): no refund. 'More than N hours' is strict: cancelling exactly N hours before departure falls in the next, costlier band.
+- "4. Waitlisted and RAC tickets": A waitlisted passenger who cancels, or whose ticket stays waitlisted after the chart, gets a full refund minus a clerkage charge of Rs 60 per passenger. RAC passengers follow the refund table.
+- "5. Refund processing": Refunds go back to the original payment method within 7 working days.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

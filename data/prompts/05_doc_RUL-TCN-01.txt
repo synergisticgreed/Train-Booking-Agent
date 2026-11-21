@@ -1,0 +1,19 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official rule document.
+Document: RUL-TCN-01 "Cancelled and late trains" (effective from 2025-04-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. Trains cancelled by Ujjwal Rail": If Ujjwal Rail cancels a train, all bookings on it are cancelled by the operator and passengers are informed by SMS.
+- "2. Refund when a train is cancelled": Passengers get 100% of the fare back automatically; no request is needed.
+- "3. Late trains": If a train departs more than 3 hours late and the passenger does not travel, they may file a TDR (Ticket Deposit Receipt) before departure for a full refund.
+- "4. Missed trains and disputes": Refunds for a missed train, or disputes about a refund, are reviewed by the Refunds desk; the outcome is decided by staff.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

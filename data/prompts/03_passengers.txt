@@ -1,0 +1,14 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Create exactly 25 fictional Ujjwal Rail passengers with ids P001 to P025.
+- name: a realistic but invented Indian full name; vary regions and genders.
+- home_city: one of ['Agra', 'Bhopal', 'Bhusawal', 'Delhi', 'Itarsi', 'Jhansi', 'Kalyan', 'Mumbai', 'Nagpur', 'Nashik', 'Pune', 'Solapur', 'Wardha']; use at least 8 different cities.
+- preferred_language: "en", "hi" or "hinglish" (at least 6 of each).
+- phone_last4: 4 random digits (we store only the last 4 digits of a phone number).
+Schema: {"passengers": [{"passenger_id": str, "name": str, "home_city": str,
+  "preferred_language": str, "phone_last4": str}]}

@@ -1,0 +1,29 @@
+{
+ "step": "05_doc_RUL-WL-01",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:03:49+05:30",
+ "seconds": 3.2,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_RUL-WL-01.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official rule document.\nDocument: RUL-WL-01 \"Waitlist and RAC\" (effective from 2025-04-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. RAC\": RAC (Reservation Against Cancellation) passengers share a side-lower berth and can travel; they get a full berth if one is freed.\n- \"2. Waitlist\": Waitlisted (WL) passengers move up as others cancel. A WL number cannot be moved up on request by anyone.\n- \"3. Charting\": The reservation chart is prepared 4 hours before departure. Tickets still fully waitlisted after charting are cancelled automatically and refunded as in RUL-CAN-01 section 4; such passengers may not board.\n- \"4. Partly confirmed bookings\": If some travellers on a booking are confirmed and others waitlisted, the confirmed travellers may travel; waitlisted ones may not after charting.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. RAC",
+    "text": "RAC (Reservation Against Cancellation) passengers share a side-lower berth and can travel. They get a full berth if one is freed."
+   },
+   {
+    "section": "2. Waitlist",
+    "text": "Waitlisted (WL) passengers move up as others cancel. A WL number cannot be moved up on request by anyone."
+   },
+   {
+    "section": "3. Charting",
+    "text": "The reservation chart is prepared 4 hours before departure. Tickets still fully waitlisted after charting are cancelled automatically and refunded as in RUL-CAN-01 section 4. Such passengers may not board."
+   },
+   {
+    "section": "4. Partly confirmed bookings",
+    "text": "If some travellers on a booking are confirmed and others waitlisted, the confirmed travellers may travel. Waitlisted ones may not after charting."
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "step": "05_doc_CIR-2026-09",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:05:38+05:30",
+ "seconds": 30.5,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_CIR-2026-09.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official circular (a notice that changes or adds to the rules).\nDocument: CIR-2026-09 \"Cancellation charges from 2026-12-15\" (effective from 2026-12-15). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Revised refund table\": With effect from 2026-12-15 the flat cancellation charges are: Per confirmed or RAC passenger. More than 48 hours before departure: flat charge (SL Rs 100, 3A Rs 160, 2A Rs 200, 1A Rs 260, CC Rs 80). More than 12 and up to 48 hours: 25% of the fare, but not less than the flat charge. More than 4 and up to 12 hours: 50% of the fare, but not less than the flat charge. 4 hours or less before departure (after the chart): no refund. 'More than N hours' is strict: cancelling exactly N hours before departure falls in the next, costlier band.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Revised refund table",
+    "text": "Effective from 2026-12-15, the flat cancellation charges per confirmed or RAC passenger are: SL Rs 100, 3A Rs 160, 2A Rs 200, 1A Rs 260, CC Rs 80 if you cancel more than 48 hours before departure. If you cancel more than 12 hours and up to 48 hours before departure, the charge will be 25% of the fare, but it will not be less than the flat charge mentioned above. If you cancel more than 4 hours and up to 12 hours before departure, the charge will be 50% of the fare, but it will not be less than the flat charge, and if you cancel 4 hours or less before departure (after the chart), no refund will be given. Note that \"More than N hours\" is strict, so cancelling exactly N hours before departure falls in the next, costlier band."
+   }
+  ]
+ }
+}

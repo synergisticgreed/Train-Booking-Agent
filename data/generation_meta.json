@@ -1,0 +1,53 @@
+{
+ "start": "2026-11-21",
+ "generated_at": "2026-11-21T16:05:52+05:30",
+ "scenarios": {
+  "refund_cutoff": {
+   "booking_id": "UR-70001",
+   "passenger_id": "P001",
+   "departs": "2026-11-25T18:55:00+05:30",
+   "as_of_exactly_at_cutoff": "2026-11-23T18:55:00+05:30",
+   "as_of_one_minute_after_cutoff": "2026-11-23T18:56:00+05:30",
+   "as_of_one_minute_before_cutoff": "2026-11-23T18:54:00+05:30",
+   "note": "'More than 48 h' is strict: exactly at the cut-off and one minute after both fall in the next band."
+  },
+  "after_midnight": {
+   "booking_id": "UR-70002",
+   "passenger_id": "P003",
+   "train_no": "14002",
+   "boards": "JHS",
+   "origin_date": "2026-11-24",
+   "departs": "2026-11-25T01:50:00+05:30"
+  },
+  "mixed_cnf_wl": {
+   "booking_id": "UR-70003",
+   "passenger_id": "P002"
+  },
+  "train_cancelled_recently": {
+   "booking_id": "UR-70004",
+   "passenger_id": "P004"
+  },
+  "no_bookings_passenger": {
+   "passenger_id": "P025"
+  },
+  "similar_station_names": {
+   "Mumbai": [
+    "CSMT",
+    "LTT"
+   ],
+   "Delhi": [
+    "NDLS",
+    "DLI"
+   ]
+  }
+ },
+ "fixes_applied_by_code": [
+  "booking #26: 02002 doesn't run on 2026-11-10; moved to 2026-11-13",
+  "booking #38: 30018 doesn't run on 2026-11-07; moved to 2026-11-09",
+  "booking #41: 26014 doesn't run on 2026-11-06; moved to 2026-11-10",
+  "booking #46: 14002 doesn't run on 2026-11-13; moved to 2026-11-14"
+ ],
+ "models": [
+  "openai/gpt-oss-120b"
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "step": "05_doc_RUL-CON-01",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:04:40+05:30",
+ "seconds": 7.5,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_RUL-CON-01.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official rule document.\nDocument: RUL-CON-01 \"Concessions\" (effective from 2025-04-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Who is eligible\": Senior citizens, persons with disabilities (with a certificate) and students on approved study tours.\n- \"2. Senior citizens\": Passengers aged 60 or more get 40% off the base fare in SL, 3A and 2A, if they choose it at booking.\n- \"3. Proof and claims\": Proof of age or eligibility must be carried. Claims made after booking, or that need documents checked, are decided by the Concessions desk; the assistant cannot approve them.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Who is eligible",
+    "text": "Senior citizens, persons with disabilities (with a certificate) and students on approved study tours are eligible for concessions."
+   },
+   {
+    "section": "2. Senior citizens",
+    "text": "Passengers aged 60 or more get 40% off the base fare in SL, 3A and 2A, if they choose it at booking."
+   },
+   {
+    "section": "3. Proof and claims",
+    "text": "Proof of age or eligibility must be carried. Claims made after booking, or that need documents checked, are decided by the Concessions desk; the assistant cannot approve them."
+   }
+  ]
+ }
+}

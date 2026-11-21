@@ -1,0 +1,21 @@
+{
+ "step": "05_doc_CIR-2026-07",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:05:05+05:30",
+ "seconds": 4.1,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_CIR-2026-07.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official circular (a notice that changes or adds to the rules).\nDocument: CIR-2026-07 \"Revised cancellation charges for AC Two Tier and First AC\" (effective from 2026-11-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Background\": With effect from 2026-11-01, the flat cancellation charge is lowered for 2A (from Rs 240 to Rs 200) and 1A (from Rs 300 to Rs 260). Other charges are unchanged.\n- \"2. Revised refund table\": Per confirmed or RAC passenger. More than 48 hours before departure: flat charge (SL Rs 120, 3A Rs 180, 2A Rs 200, 1A Rs 260, CC Rs 90). More than 12 and up to 48 hours: 25% of the fare, but not less than the flat charge. More than 4 and up to 12 hours: 50% of the fare, but not less than the flat charge. 4 hours or less before departure (after the chart): no refund. 'More than N hours' is strict: cancelling exactly N hours before departure falls in the next, costlier band.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Background",
+    "text": "Effective from 2026-11-01, the flat cancellation charge for AC Two Tier (2A) is reduced from Rs 240 to Rs 200. The flat cancellation charge for First AC (1A) is reduced from Rs 300 to Rs 260, while all other class charges remain unchanged."
+   },
+   {
+    "section": "2. Revised refund table",
+    "text": "For confirmed or RAC passengers, cancellations made more than 48 hours before departure attract a flat charge of Rs 120 for SL, Rs 180 for 3A, Rs 200 for 2A, Rs 260 for 1A and Rs 90 for CC. Cancellations made more than 12 hours and up to 48 hours before departure will incur a charge of 25% of the fare, but not less than the applicable flat charge. Cancellations made more than 4 hours and up to 12 hours before departure will incur a charge of 50% of the fare, but not less than the applicable flat charge. Cancellations made 4 hours or less before departure (after the chart) will not be refunded."
+   }
+  ]
+ }
+}

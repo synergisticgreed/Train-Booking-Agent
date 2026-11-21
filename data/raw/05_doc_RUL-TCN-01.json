@@ -1,0 +1,29 @@
+{
+ "step": "05_doc_RUL-TCN-01",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:04:56+05:30",
+ "seconds": 8.4,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_RUL-TCN-01.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official rule document.\nDocument: RUL-TCN-01 \"Cancelled and late trains\" (effective from 2025-04-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Trains cancelled by Ujjwal Rail\": If Ujjwal Rail cancels a train, all bookings on it are cancelled by the operator and passengers are informed by SMS.\n- \"2. Refund when a train is cancelled\": Passengers get 100% of the fare back automatically; no request is needed.\n- \"3. Late trains\": If a train departs more than 3 hours late and the passenger does not travel, they may file a TDR (Ticket Deposit Receipt) before departure for a full refund.\n- \"4. Missed trains and disputes\": Refunds for a missed train, or disputes about a refund, are reviewed by the Refunds desk; the outcome is decided by staff.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Trains cancelled by Ujjwal Rail",
+    "text": "If Ujjwal Rail cancels a train, all bookings on it are cancelled by the operator and passengers are informed by SMS."
+   },
+   {
+    "section": "2. Refund when a train is cancelled",
+    "text": "Passengers get 100% of the fare back automatically; no request is needed."
+   },
+   {
+    "section": "3. Late trains",
+    "text": "If a train departs more than 3 hours late and the passenger does not travel, they may file a TDR (Ticket Deposit Receipt) before departure for a full refund."
+   },
+   {
+    "section": "4. Missed trains and disputes",
+    "text": "Refunds for a missed train, or disputes about a refund, are reviewed by the Refunds desk; the outcome is decided by staff."
+   }
+  ]
+ }
+}

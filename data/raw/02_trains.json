@@ -1,0 +1,1034 @@
+{
+ "step": "02_trains",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:01:25+05:30",
+ "seconds": 28.6,
+ "attempt": 1,
+ "prompt_file": "data/prompts/02_trains.txt",
+ "final_prompt": "Create exactly 25 trains for Ujjwal Rail using ONLY these station codes:\n- CSMT: Mumbai CSMT (Mumbai)\n- LTT: Lokmanya Tilak Terminus (Mumbai)\n- KYN: Kalyan Junction (Kalyan)\n- PUNE: Pune Junction (Pune)\n- NGP: Nagpur Junction (Nagpur)\n- NDLS: New Delhi (Delhi)\n- DLI: Old Delhi (Delhi)\n- BSR: Bhusawal Junction (Bhusawal)\n- NASH: Nashik Road (Nashik)\n- ITJ: Itarsi Junction (Itarsi)\n- BPL: Bhopal Junction (Bhopal)\n- JHS: Jhansi Junction (Jhansi)\n- AGC: Agra Cantt (Agra)\n- WRD: Wardha Junction (Wardha)\n- SLP: Solapur Junction (Solapur)\n\nRequirements:\n- train_no: 5 digits, unique. Include train 12123 \"Vidarbha Express\", running Daily\n  CSMT -> KYN -> PUNE -> NGP with classes SL, 3A, 2A (departs CSMT in the afternoon, reaches NGP next morning).\n- At least 5 trains (including 12123) go from PUNE to NGP, and at least 2 of them leave PUNE after 18:00.\n- At least 1 train must depart an INTERMEDIATE station between 00:00 and 03:30, i.e. after midnight,\n  the day after it left its origin (an overnight train).\n- At least 2 festival special trains: train_no starting with \"01\" or \"02\", name ending in \"Special\",\n  running only 1-3 days a week.\n- At least 6 trains are not Daily. runs_on is \"Daily\" or a list of 3-letter days [\"Mon\",\"Wed\",...],\n  meaning the days the train leaves its ORIGIN station.\n- Use both Mumbai stations (CSMT and LTT) and both Delhi stations (NDLS and DLI) somewhere.\n- stops: 2 to 7 stops in travel order. Times are 24-hour \"HH:MM\". The first stop has arrival null,\n  the last stop has departure null. km is the cumulative distance from the origin (first stop 0),\n  strictly increasing. Times must be realistic for the distance (about 50-70 km/h average).\n- classes: a subset of [\"SL\",\"3A\",\"2A\",\"1A\",\"CC\"]. Use \"CC\" (chair car) only for day trains under 10 hours,\n  and then usually without sleeper classes.\n- full_fares: the fare in rupees for EACH class from the first to the last stop, roughly\n  SL 0.45/km, 3A 1.2/km, 2A 1.7/km, 1A 2.8/km, CC 1.0/km (round to a multiple of 5).\n- demand: \"high\", \"medium\" or \"low\" (how full the train usually is). At least 6 \"high\".\nSchema: {\"trains\": [{\"train_no\": str, \"name\": str, \"runs_on\": \"Daily\" | [str], \"classes\": [str],\n  \"demand\": str, \"full_fares\": {class: int},\n  \"stops\": [{\"station_code\": str, \"arrival\": str|null, \"departure\": str|null, \"km\": int}]}]}",
+ "response": {
+  "trains": [
+   {
+    "train_no": "12123",
+    "name": "Vidarbha Express",
+    "runs_on": "Daily",
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 450,
+     "3A": 1200,
+     "2A": 1700
+    },
+    "stops": [
+     {
+      "station_code": "CSMT",
+      "arrival": null,
+      "departure": "14:30",
+      "km": 0
+     },
+     {
+      "station_code": "KYN",
+      "arrival": "15:30",
+      "departure": "15:35",
+      "km": 50
+     },
+     {
+      "station_code": "PUNE",
+      "arrival": "18:45",
+      "departure": "18:55",
+      "km": 200
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "06:30",
+      "departure": null,
+      "km": 1000
+     }
+    ]
+   },
+   {
+    "train_no": "12456",
+    "name": "Maharashtra Express",
+    "runs_on": [
+     "Mon",
+     "Wed",
+     "Fri"
+    ],
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 250,
+     "3A": 665,
+     "2A": 945
+    },
+    "stops": [
+     {
+      "station_code": "LTT",
+      "arrival": null,
+      "departure": "06:00",
+      "km": 0
+     },
+     {
+      "station_code": "KYN",
+      "arrival": "06:55",
+      "departure": "07:00",
+      "km": 55
+     },
+     {
+      "station_code": "BSR",
+      "arrival": "10:30",
+      "departure": "10:35",
+      "km": 255
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "14:45",
+      "departure": null,
+      "km": 555
+     }
+    ]
+   },
+   {
+    "train_no": "13001",
+    "name": "Deccan Day Special",
+    "runs_on": "Daily",
+    "classes": [
+     "CC"
+    ],
+    "demand": "medium",
+    "full_fares": {
+     "CC": 300
+    },
+    "stops": [
+     {
+      "station_code": "PUNE",
+      "arrival": null,
+      "departure": "07:00",
+      "km": 0
+     },
+     {
+      "station_code": "NASH",
+      "arrival": "09:30",
+      "departure": "09:35",
+      "km": 200
+     },
+     {
+      "station_code": "KYN",
+      "arrival": "10:20",
+      "departure": "10:25",
+      "km": 250
+     },
+     {
+      "station_code": "CSMT",
+      "arrival": "11:30",
+      "departure": null,
+      "km": 300
+     }
+    ]
+   },
+   {
+    "train_no": "14002",
+    "name": "Northbound Express",
+    "runs_on": [
+     "Tue",
+     "Thu",
+     "Sat"
+    ],
+    "classes": [
+     "SL",
+     "3A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 540,
+     "3A": 1440
+    },
+    "stops": [
+     {
+      "station_code": "NDLS",
+      "arrival": null,
+      "departure": "20:00",
+      "km": 0
+     },
+     {
+      "station_code": "AGC",
+      "arrival": "22:30",
+      "departure": "22:35",
+      "km": 200
+     },
+     {
+      "station_code": "JHS",
+      "arrival": "01:45",
+      "departure": "01:50",
+      "km": 450
+     },
+     {
+      "station_code": "BPL",
+      "arrival": "04:30",
+      "departure": "04:35",
+      "km": 650
+     },
+     {
+      "station_code": "ITJ",
+      "arrival": "07:30",
+      "departure": "07:35",
+      "km": 900
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "11:30",
+      "departure": null,
+      "km": 1200
+     }
+    ]
+   },
+   {
+    "train_no": "15003",
+    "name": "Delhi-Mumbai Superfast",
+    "runs_on": "Daily",
+    "classes": [
+     "SL",
+     "3A",
+     "2A",
+     "1A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 790,
+     "3A": 2100,
+     "2A": 2980,
+     "1A": 4910
+    },
+    "stops": [
+     {
+      "station_code": "NDLS",
+      "arrival": null,
+      "departure": "06:00",
+      "km": 0
+     },
+     {
+      "station_code": "DLI",
+      "arrival": "06:05",
+      "departure": "06:10",
+      "km": 2
+     },
+     {
+      "station_code": "BSR",
+      "arrival": "18:30",
+      "departure": "18:35",
+      "km": 1202
+     },
+     {
+      "station_code": "PUNE",
+      "arrival": "22:30",
+      "departure": "22:35",
+      "km": 1452
+     },
+     {
+      "station_code": "CSMT",
+      "arrival": "02:30",
+      "departure": null,
+      "km": 1752
+     }
+    ]
+   },
+   {
+    "train_no": "16004",
+    "name": "Madhya Pradesh Express",
+    "runs_on": [
+     "Mon",
+     "Wed",
+     "Fri"
+    ],
+    "classes": [
+     "SL",
+     "3A"
+    ],
+    "demand": "medium",
+    "full_fares": {
+     "SL": 295,
+     "3A": 780
+    },
+    "stops": [
+     {
+      "station_code": "BPL",
+      "arrival": null,
+      "departure": "08:00",
+      "km": 0
+     },
+     {
+      "station_code": "JHS",
+      "arrival": "10:30",
+      "departure": "10:35",
+      "km": 200
+     },
+     {
+      "station_code": "AGC",
+      "arrival": "13:45",
+      "departure": "13:50",
+      "km": 450
+     },
+     {
+      "station_code": "NDLS",
+      "arrival": "16:30",
+      "departure": null,
+      "km": 650
+     }
+    ]
+   },
+   {
+    "train_no": "01001",
+    "name": "South Central Special",
+    "runs_on": [
+     "Sun"
+    ],
+    "classes": [
+     "SL",
+     "3A"
+    ],
+    "demand": "low",
+    "full_fares": {
+     "SL": 450,
+     "3A": 1200
+    },
+    "stops": [
+     {
+      "station_code": "LTT",
+      "arrival": null,
+      "departure": "05:00",
+      "km": 0
+     },
+     {
+      "station_code": "NASH",
+      "arrival": "08:30",
+      "departure": "08:35",
+      "km": 250
+     },
+     {
+      "station_code": "PUNE",
+      "arrival": "11:30",
+      "departure": "11:35",
+      "km": 450
+     },
+     {
+      "station_code": "BSR",
+      "arrival": "15:30",
+      "departure": "15:35",
+      "km": 700
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "20:00",
+      "departure": null,
+      "km": 1000
+     }
+    ]
+   },
+   {
+    "train_no": "02002",
+    "name": "Winter Festival Special",
+    "runs_on": [
+     "Fri",
+     "Sat"
+    ],
+    "classes": [
+     "SL"
+    ],
+    "demand": "low",
+    "full_fares": {
+     "SL": 315
+    },
+    "stops": [
+     {
+      "station_code": "CSMT",
+      "arrival": null,
+      "departure": "22:00",
+      "km": 0
+     },
+     {
+      "station_code": "NASH",
+      "arrival": "01:30",
+      "departure": "01:35",
+      "km": 250
+     },
+     {
+      "station_code": "WRD",
+      "arrival": "05:45",
+      "departure": "05:50",
+      "km": 550
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "08:30",
+      "departure": null,
+      "km": 700
+     }
+    ]
+   },
+   {
+    "train_no": "18006",
+    "name": "Pune-Nagpur Superfast",
+    "runs_on": "Daily",
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 250,
+     "3A": 660,
+     "2A": 935
+    },
+    "stops": [
+     {
+      "station_code": "PUNE",
+      "arrival": null,
+      "departure": "09:00",
+      "km": 0
+     },
+     {
+      "station_code": "BSR",
+      "arrival": "12:30",
+      "departure": "12:35",
+      "km": 250
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "16:00",
+      "departure": null,
+      "km": 550
+     }
+    ]
+   },
+   {
+    "train_no": "19007",
+    "name": "Delhi Express",
+    "runs_on": [
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri"
+    ],
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "medium",
+    "full_fares": {
+     "SL": 540,
+     "3A": 1440,
+     "2A": 2045
+    },
+    "stops": [
+     {
+      "station_code": "DLI",
+      "arrival": null,
+      "departure": "07:00",
+      "km": 0
+     },
+     {
+      "station_code": "NDLS",
+      "arrival": "07:05",
+      "departure": "07:10",
+      "km": 2
+     },
+     {
+      "station_code": "AGC",
+      "arrival": "09:40",
+      "departure": "09:45",
+      "km": 202
+     },
+     {
+      "station_code": "JHS",
+      "arrival": "13:00",
+      "departure": "13:05",
+      "km": 452
+     },
+     {
+      "station_code": "BPL",
+      "arrival": "15:45",
+      "departure": "15:50",
+      "km": 652
+     },
+     {
+      "station_code": "ITJ",
+      "arrival": "18:45",
+      "departure": "18:50",
+      "km": 902
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "22:30",
+      "departure": null,
+      "km": 1202
+     }
+    ]
+   },
+   {
+    "train_no": "20008",
+    "name": "Pune-Bhusawal-Nagpur Express",
+    "runs_on": "Daily",
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 250,
+     "3A": 660,
+     "2A": 935
+    },
+    "stops": [
+     {
+      "station_code": "PUNE",
+      "arrival": null,
+      "departure": "06:00",
+      "km": 0
+     },
+     {
+      "station_code": "BSR",
+      "arrival": "09:30",
+      "departure": "09:35",
+      "km": 250
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "13:30",
+      "departure": null,
+      "km": 550
+     }
+    ]
+   },
+   {
+    "train_no": "21009",
+    "name": "Nagpur-Delhi Night",
+    "runs_on": "Daily",
+    "classes": [
+     "SL",
+     "3A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 675,
+     "3A": 1800
+    },
+    "stops": [
+     {
+      "station_code": "NGP",
+      "arrival": null,
+      "departure": "20:00",
+      "km": 0
+     },
+     {
+      "station_code": "WRD",
+      "arrival": "22:30",
+      "departure": "22:35",
+      "km": 150
+     },
+     {
+      "station_code": "BSR",
+      "arrival": "02:30",
+      "departure": "02:35",
+      "km": 300
+     },
+     {
+      "station_code": "DLI",
+      "arrival": "15:00",
+      "departure": "15:05",
+      "km": 1500
+     },
+     {
+      "station_code": "NDLS",
+      "arrival": "15:10",
+      "departure": null,
+      "km": 1502
+     }
+    ]
+   },
+   {
+    "train_no": "22010",
+    "name": "Kalyan Express",
+    "runs_on": [
+     "Mon",
+     "Wed",
+     "Fri"
+    ],
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "medium",
+    "full_fares": {
+     "SL": 25,
+     "3A": 70,
+     "2A": 100
+    },
+    "stops": [
+     {
+      "station_code": "KYN",
+      "arrival": null,
+      "departure": "08:00",
+      "km": 0
+     },
+     {
+      "station_code": "CSMT",
+      "arrival": "08:45",
+      "departure": "08:50",
+      "km": 50
+     },
+     {
+      "station_code": "LTT",
+      "arrival": "09:00",
+      "departure": null,
+      "km": 60
+     }
+    ]
+   },
+   {
+    "train_no": "01123",
+    "name": "Agra Delhi Special",
+    "runs_on": [
+     "Sun",
+     "Mon"
+    ],
+    "classes": [
+     "SL",
+     "3A"
+    ],
+    "demand": "medium",
+    "full_fares": {
+     "SL": 90,
+     "3A": 240
+    },
+    "stops": [
+     {
+      "station_code": "AGC",
+      "arrival": null,
+      "departure": "10:00",
+      "km": 0
+     },
+     {
+      "station_code": "NDLS",
+      "arrival": "12:30",
+      "departure": "12:35",
+      "km": 200
+     },
+     {
+      "station_code": "DLI",
+      "arrival": "12:40",
+      "departure": null,
+      "km": 202
+     }
+    ]
+   },
+   {
+    "train_no": "24012",
+    "name": "Solapur Express",
+    "runs_on": "Daily",
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 250,
+     "3A": 660,
+     "2A": 935
+    },
+    "stops": [
+     {
+      "station_code": "SLP",
+      "arrival": null,
+      "departure": "05:00",
+      "km": 0
+     },
+     {
+      "station_code": "PUNE",
+      "arrival": "08:30",
+      "departure": "08:35",
+      "km": 250
+     },
+     {
+      "station_code": "CSMT",
+      "arrival": "12:30",
+      "departure": null,
+      "km": 550
+     }
+    ]
+   },
+   {
+    "train_no": "25013",
+    "name": "Itarsi-Bhopal Intercity",
+    "runs_on": "Daily",
+    "classes": [
+     "CC"
+    ],
+    "demand": "medium",
+    "full_fares": {
+     "CC": 250
+    },
+    "stops": [
+     {
+      "station_code": "ITJ",
+      "arrival": null,
+      "departure": "06:00",
+      "km": 0
+     },
+     {
+      "station_code": "BPL",
+      "arrival": "09:30",
+      "departure": null,
+      "km": 250
+     }
+    ]
+   },
+   {
+    "train_no": "26014",
+    "name": "Jhansi-Agra Express",
+    "runs_on": [
+     "Tue",
+     "Thu"
+    ],
+    "classes": [
+     "SL",
+     "3A"
+    ],
+    "demand": "low",
+    "full_fares": {
+     "SL": 110,
+     "3A": 300
+    },
+    "stops": [
+     {
+      "station_code": "JHS",
+      "arrival": null,
+      "departure": "07:00",
+      "km": 0
+     },
+     {
+      "station_code": "AGC",
+      "arrival": "10:30",
+      "departure": null,
+      "km": 250
+     }
+    ]
+   },
+   {
+    "train_no": "27015",
+    "name": "Bhusawal-Nashik Shuttle",
+    "runs_on": "Daily",
+    "classes": [
+     "CC"
+    ],
+    "demand": "low",
+    "full_fares": {
+     "CC": 300
+    },
+    "stops": [
+     {
+      "station_code": "BSR",
+      "arrival": null,
+      "departure": "07:00",
+      "km": 0
+     },
+     {
+      "station_code": "NASH",
+      "arrival": "10:30",
+      "departure": "10:35",
+      "km": 250
+     },
+     {
+      "station_code": "KYN",
+      "arrival": "11:30",
+      "departure": null,
+      "km": 300
+     }
+    ]
+   },
+   {
+    "train_no": "28016",
+    "name": "Delhi-Nagpur Weekly",
+    "runs_on": [
+     "Wed"
+    ],
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "medium",
+    "full_fares": {
+     "SL": 675,
+     "3A": 1800,
+     "2A": 2555
+    },
+    "stops": [
+     {
+      "station_code": "NDLS",
+      "arrival": null,
+      "departure": "18:00",
+      "km": 0
+     },
+     {
+      "station_code": "DLI",
+      "arrival": "18:05",
+      "departure": "18:10",
+      "km": 2
+     },
+     {
+      "station_code": "BSR",
+      "arrival": "06:30",
+      "departure": "06:35",
+      "km": 1202
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "10:30",
+      "departure": null,
+      "km": 1502
+     }
+    ]
+   },
+   {
+    "train_no": "29017",
+    "name": "Pune Night Express",
+    "runs_on": "Daily",
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 250,
+     "3A": 660,
+     "2A": 935
+    },
+    "stops": [
+     {
+      "station_code": "PUNE",
+      "arrival": null,
+      "departure": "20:30",
+      "km": 0
+     },
+     {
+      "station_code": "BSR",
+      "arrival": "00:00",
+      "departure": "00:05",
+      "km": 250
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "04:00",
+      "departure": null,
+      "km": 550
+     }
+    ]
+   },
+   {
+    "train_no": "30018",
+    "name": "Bhopal-Jhansi Express",
+    "runs_on": [
+     "Mon",
+     "Wed",
+     "Fri"
+    ],
+    "classes": [
+     "SL",
+     "3A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 295,
+     "3A": 780
+    },
+    "stops": [
+     {
+      "station_code": "BPL",
+      "arrival": null,
+      "departure": "05:00",
+      "km": 0
+     },
+     {
+      "station_code": "JHS",
+      "arrival": "07:30",
+      "departure": "07:35",
+      "km": 200
+     },
+     {
+      "station_code": "AGC",
+      "arrival": "11:00",
+      "departure": "11:05",
+      "km": 450
+     },
+     {
+      "station_code": "NDLS",
+      "arrival": "13:30",
+      "departure": null,
+      "km": 650
+     }
+    ]
+   },
+   {
+    "train_no": "31019",
+    "name": "Solapur-Bhusawal Express",
+    "runs_on": "Daily",
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 315,
+     "3A": 840,
+     "2A": 1190
+    },
+    "stops": [
+     {
+      "station_code": "SLP",
+      "arrival": null,
+      "departure": "04:00",
+      "km": 0
+     },
+     {
+      "station_code": "BSR",
+      "arrival": "09:30",
+      "departure": "09:35",
+      "km": 400
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "13:30",
+      "departure": null,
+      "km": 700
+     }
+    ]
+   },
+   {
+    "train_no": "02020",
+    "name": "Delhi-Nashik Special",
+    "runs_on": [
+     "Sat"
+    ],
+    "classes": [
+     "SL"
+    ],
+    "demand": "low",
+    "full_fares": {
+     "SL": 810
+    },
+    "stops": [
+     {
+      "station_code": "NDLS",
+      "arrival": null,
+      "departure": "22:00",
+      "km": 0
+     },
+     {
+      "station_code": "NASH",
+      "arrival": "08:00",
+      "departure": "08:05",
+      "km": 1300
+     },
+     {
+      "station_code": "PUNE",
+      "arrival": "11:30",
+      "departure": "11:35",
+      "km": 1500
+     },
+     {
+      "station_code": "CSMT",
+      "arrival": "15:30",
+      "departure": null,
+      "km": 1800
+     }
+    ]
+   },
+   {
+    "train_no": "33021",
+    "name": "Pune-Wardha Express",
+    "runs_on": "Daily",
+    "classes": [
+     "SL",
+     "3A"
+    ],
+    "demand": "medium",
+    "full_fares": {
+     "SL": 225,
+     "3A": 600
+    },
+    "stops": [
+     {
+      "station_code": "PUNE",
+      "arrival": null,
+      "departure": "19:00",
+      "km": 0
+     },
+     {
+      "station_code": "WRD",
+      "arrival": "22:30",
+      "departure": "22:35",
+      "km": 350
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "00:45",
+      "departure": null,
+      "km": 500
+     }
+    ]
+   },
+   {
+    "train_no": "34022",
+    "name": "Kalyan-Nagpur Express",
+    "runs_on": "Daily",
+    "classes": [
+     "SL",
+     "3A",
+     "2A"
+    ],
+    "demand": "high",
+    "full_fares": {
+     "SL": 225,
+     "3A": 600,
+     "2A": 850
+    },
+    "stops": [
+     {
+      "station_code": "KYN",
+      "arrival": null,
+      "departure": "06:00",
+      "km": 0
+     },
+     {
+      "station_code": "BSR",
+      "arrival": "09:30",
+      "departure": "09:35",
+      "km": 200
+     },
+     {
+      "station_code": "NGP",
+      "arrival": "13:30",
+      "departure": null,
+      "km": 500
+     }
+    ]
+   }
+  ]
+ }
+}

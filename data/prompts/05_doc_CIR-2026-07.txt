@@ -1,0 +1,17 @@
+### SYSTEM
+You generate FICTIONAL data for "Ujjwal Rail", an invented Indian train operator used in a
+hackathon. Invent everything: never copy real timetables, real train numbers' real data, real people,
+real phone numbers or real booking references. Output ONLY one JSON object that follows the requested
+schema exactly - no markdown, no comments.
+
+### USER
+Write the text of an Ujjwal Rail official circular (a notice that changes or adds to the rules).
+Document: CIR-2026-07 "Revised cancellation charges for AC Two Tier and First AC" (effective from 2026-11-01). Language: English.
+Write each section below as 1-4 clear sentences for passengers, using ONLY the facts given.
+Keep every number, amount, percentage, time, date and document ID exactly as given, using Western
+digits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,
+rules, phone numbers, websites or contact details.
+Sections (name: facts):
+- "1. Background": With effect from 2026-11-01, the flat cancellation charge is lowered for 2A (from Rs 240 to Rs 200) and 1A (from Rs 300 to Rs 260). Other charges are unchanged.
+- "2. Revised refund table": Per confirmed or RAC passenger. More than 48 hours before departure: flat charge (SL Rs 120, 3A Rs 180, 2A Rs 200, 1A Rs 260, CC Rs 90). More than 12 and up to 48 hours: 25% of the fare, but not less than the flat charge. More than 4 and up to 12 hours: 50% of the fare, but not less than the flat charge. 4 hours or less before departure (after the chart): no refund. 'More than N hours' is strict: cancelling exactly N hours before departure falls in the next, costlier band.
+Schema: {"sections": [{"section": "<exact section name>", "text": str}]}

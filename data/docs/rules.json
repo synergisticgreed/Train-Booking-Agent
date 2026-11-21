@@ -1,0 +1,491 @@
+[
+ {
+  "doc_id": "RUL-BKG-01",
+  "doc_type": "rule",
+  "title": "Booking tickets",
+  "topic": "booking",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. Who can book",
+    "text": "Any person aged 12 or more with an Ujjwal Rail account can book for themselves and others."
+   },
+   {
+    "section": "2. Advance reservation period",
+    "text": "Reservations open 60 days before the journey date, not counting the day of departure from the origin station."
+   },
+   {
+    "section": "3. Passengers per booking",
+    "text": "A maximum of 6 passengers may be included in a single booking."
+   },
+   {
+    "section": "4. Payment and e-tickets",
+    "text": "Payment is taken at the time of booking. The e-ticket delivered to the phone via SMS or the app, together with an original ID, is valid; a printed ticket is not required."
+   },
+   {
+    "section": "5. Confirming changes",
+    "text": "Any booking, cancellation or change made through the assistant is first shown as a preview. It is confirmed only when the passenger presses Confirm within 15 minutes; otherwise the proposal expires."
+   }
+  ],
+  "settings": [
+   {
+    "name": "booking_window_days",
+    "value": 60,
+    "section": "2. Advance reservation period"
+   },
+   {
+    "name": "max_passengers_per_booking",
+    "value": 6,
+    "section": "3. Passengers per booking"
+   },
+   {
+    "name": "action_ttl_minutes",
+    "value": 15,
+    "section": "5. Confirming changes"
+   }
+  ]
+ },
+ {
+  "doc_id": "RUL-CLS-01",
+  "doc_type": "rule",
+  "title": "Classes of travel",
+  "topic": "classes",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. Classes",
+    "text": "Ujjwal Rail offers the following classes of travel: SL Sleeper (non-AC berths), 3A AC Three Tier, 2A AC Two Tier, 1A AC First Class (lockable cabins and coupes), and CC AC Chair Car (seats, day trains). Each class provides the amenities described in parentheses."
+   },
+   {
+    "section": "2. Berths and seats per train",
+    "text": "The number of bookable berths or seats per train for each class is: SL 72, 3A 64, 2A 46, 1A 18, and CC 78. These capacities apply to every scheduled service."
+   }
+  ],
+  "settings": [
+   {
+    "name": "capacity_SL",
+    "value": 72,
+    "section": "2. Berths and seats per train"
+   },
+   {
+    "name": "capacity_3A",
+    "value": 64,
+    "section": "2. Berths and seats per train"
+   },
+   {
+    "name": "capacity_2A",
+    "value": 46,
+    "section": "2. Berths and seats per train"
+   },
+   {
+    "name": "capacity_1A",
+    "value": 18,
+    "section": "2. Berths and seats per train"
+   },
+   {
+    "name": "capacity_CC",
+    "value": 78,
+    "section": "2. Berths and seats per train"
+   }
+  ]
+ },
+ {
+  "doc_id": "RUL-CAN-01",
+  "doc_type": "rule",
+  "title": "Cancellation and refunds",
+  "topic": "cancellation",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. How to cancel",
+    "text": "Cancel through the app, website or assistant up to departure. Partial cancellation of some travellers is allowed."
+   },
+   {
+    "section": "2. Departure time used",
+    "text": "All time limits are counted from the scheduled departure time of the train from the passenger's boarding station."
+   },
+   {
+    "section": "3. Refund table",
+    "text": "For confirmed or RAC passengers, cancellations more than 48 hours before departure incur a flat charge of Rs 120 for SL, Rs 180 for 3A, Rs 240 for 2A, Rs 300 for 1A and Rs 90 for CC. Cancellations more than 12 hours and up to 48 hours before departure are charged 25% of the fare, but not less than the applicable flat charge. Cancellations more than 4 hours and up to 12 hours before departure are charged 50% of the fare, but not less than the applicable flat charge, and cancellations 4 hours or less before departure (after the chart) receive no refund. Cancelling exactly at the hour limit falls in the next, costlier band."
+   },
+   {
+    "section": "4. Waitlisted and RAC tickets",
+    "text": "A waitlisted passenger who cancels, or whose ticket remains waitlisted after the chart, receives a full refund minus a clerkage charge of Rs 60 per passenger. RAC passengers follow the refund table."
+   },
+   {
+    "section": "5. Refund processing",
+    "text": "Refunds are returned to the original payment method within 7 working days."
+   }
+  ],
+  "settings": [
+   {
+    "name": "cancel_tier1_hours",
+    "value": 48,
+    "section": "3. Refund table"
+   },
+   {
+    "name": "cancel_tier2_hours",
+    "value": 12,
+    "section": "3. Refund table"
+   },
+   {
+    "name": "cancel_no_refund_hours",
+    "value": 4,
+    "section": "3. Refund table"
+   },
+   {
+    "name": "cancel_tier2_pct",
+    "value": 25,
+    "section": "3. Refund table"
+   },
+   {
+    "name": "cancel_tier3_pct",
+    "value": 50,
+    "section": "3. Refund table"
+   },
+   {
+    "name": "cancel_flat_charge_SL",
+    "value": 120,
+    "section": "3. Refund table"
+   },
+   {
+    "name": "cancel_flat_charge_3A",
+    "value": 180,
+    "section": "3. Refund table"
+   },
+   {
+    "name": "cancel_flat_charge_2A",
+    "value": 240,
+    "section": "3. Refund table"
+   },
+   {
+    "name": "cancel_flat_charge_1A",
+    "value": 300,
+    "section": "3. Refund table"
+   },
+   {
+    "name": "cancel_flat_charge_CC",
+    "value": 90,
+    "section": "3. Refund table"
+   },
+   {
+    "name": "wl_clerkage_charge",
+    "value": 60,
+    "section": "4. Waitlisted and RAC tickets"
+   },
+   {
+    "name": "refund_processing_days",
+    "value": 7,
+    "section": "5. Refund processing"
+   }
+  ]
+ },
+ {
+  "doc_id": "RUL-WL-01",
+  "doc_type": "rule",
+  "title": "Waitlist and RAC",
+  "topic": "waitlist",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. RAC",
+    "text": "RAC (Reservation Against Cancellation) passengers share a side-lower berth and can travel. They get a full berth if one is freed."
+   },
+   {
+    "section": "2. Waitlist",
+    "text": "Waitlisted (WL) passengers move up as others cancel. A WL number cannot be moved up on request by anyone."
+   },
+   {
+    "section": "3. Charting",
+    "text": "The reservation chart is prepared 4 hours before departure. Tickets still fully waitlisted after charting are cancelled automatically and refunded as in RUL-CAN-01 section 4. Such passengers may not board."
+   },
+   {
+    "section": "4. Partly confirmed bookings",
+    "text": "If some travellers on a booking are confirmed and others waitlisted, the confirmed travellers may travel. Waitlisted ones may not after charting."
+   }
+  ],
+  "settings": [
+   {
+    "name": "chart_prepared_hours_before",
+    "value": 4,
+    "section": "3. Charting"
+   }
+  ]
+ },
+ {
+  "doc_id": "RUL-TAT-01",
+  "doc_type": "rule",
+  "title": "Tatkal tickets",
+  "topic": "tatkal",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. Booking window",
+    "text": "Tatkal booking opens one day before the journey date: 10:00 for AC classes and 11:00 for SL."
+   },
+   {
+    "section": "2. Tatkal charges",
+    "text": "Tatkal charge per passenger on top of the fare: SL Rs 150, 3A Rs 300, 2A Rs 400."
+   },
+   {
+    "section": "3. Cancellation",
+    "text": "No refund on cancelling a confirmed Tatkal ticket. Waitlisted Tatkal tickets are refunded as normal waitlisted tickets."
+   }
+  ],
+  "settings": [
+   {
+    "name": "tatkal_charge_SL",
+    "value": 150,
+    "section": "2. Tatkal charges"
+   },
+   {
+    "name": "tatkal_charge_3A",
+    "value": 300,
+    "section": "2. Tatkal charges"
+   },
+   {
+    "name": "tatkal_charge_2A",
+    "value": 400,
+    "section": "2. Tatkal charges"
+   }
+  ]
+ },
+ {
+  "doc_id": "RUL-ID-01",
+  "doc_type": "rule",
+  "title": "Identity proof",
+  "topic": "id_proof",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. Accepted documents",
+    "text": "Passengers must present one of the following original documents: Aadhaar card, passport, driving licence, voter ID, PAN card, or a government or college photo ID card."
+   },
+   {
+    "section": "2. Who must carry ID",
+    "text": "At least one traveller on each booking must carry an accepted original ID. For Tatkal bookings, every traveller must carry an accepted original ID."
+   },
+   {
+    "section": "3. Without ID",
+    "text": "A passenger who cannot show an accepted ID is treated as travelling without a ticket."
+   }
+  ],
+  "settings": []
+ },
+ {
+  "doc_id": "RUL-LUG-01",
+  "doc_type": "rule",
+  "title": "Luggage and pets",
+  "topic": "luggage",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. Free allowance",
+    "text": "Each passenger may carry up to 40 kg of luggage in Sleeper (SL) class and up to 50 kg in any AC class. The allowance applies per passenger for the entire journey."
+   },
+   {
+    "section": "2. Excess luggage",
+    "text": "If your luggage exceeds the free allowance, you must book the excess at the station parcel office before departure. No excess luggage will be accepted on board without prior booking."
+   },
+   {
+    "section": "3. Prohibited items",
+    "text": "The following items are strictly prohibited: gas cylinders, fuel, fireworks, acids and any other dangerous goods. Carrying any of these items may result in denial of carriage and penalties."
+   },
+   {
+    "section": "4. Pets",
+    "text": "Only one dog or cat is allowed per passenger and it may travel only in a 1A coupe that is booked in full under the same reservation. A pet charge of Rs 500 per pet applies and a valid veterinary certificate must be presented."
+   }
+  ],
+  "settings": [
+   {
+    "name": "free_luggage_kg_SL",
+    "value": 40,
+    "section": "1. Free allowance"
+   },
+   {
+    "name": "free_luggage_kg_AC",
+    "value": 50,
+    "section": "1. Free allowance"
+   },
+   {
+    "name": "pet_charge",
+    "value": 500,
+    "section": "4. Pets"
+   }
+  ]
+ },
+ {
+  "doc_id": "RUL-CON-01",
+  "doc_type": "rule",
+  "title": "Concessions",
+  "topic": "concessions",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. Who is eligible",
+    "text": "Senior citizens, persons with disabilities (with a certificate) and students on approved study tours are eligible for concessions."
+   },
+   {
+    "section": "2. Senior citizens",
+    "text": "Passengers aged 60 or more get 40% off the base fare in SL, 3A and 2A, if they choose it at booking."
+   },
+   {
+    "section": "3. Proof and claims",
+    "text": "Proof of age or eligibility must be carried. Claims made after booking, or that need documents checked, are decided by the Concessions desk; the assistant cannot approve them."
+   }
+  ],
+  "settings": [
+   {
+    "name": "senior_concession_pct",
+    "value": 40,
+    "section": "2. Senior citizens"
+   },
+   {
+    "name": "senior_min_age",
+    "value": 60,
+    "section": "2. Senior citizens"
+   }
+  ]
+ },
+ {
+  "doc_id": "RUL-BRD-01",
+  "doc_type": "rule",
+  "title": "Changing the boarding station",
+  "topic": "boarding",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. How to change",
+    "text": "You may change the boarding station once per booking to another stop of the same train, provided the new stop is before your destination."
+   },
+   {
+    "section": "2. Cut-off",
+    "text": "A change is allowed only if you request it more than 24 hours before the scheduled departure from the original boarding station."
+   },
+   {
+    "section": "3. Fare",
+    "text": "The fare does not change and no refund is given; you lose the right to board at the original station."
+   }
+  ],
+  "settings": [
+   {
+    "name": "boarding_change_cutoff_hours",
+    "value": 24,
+    "section": "2. Cut-off"
+   }
+  ]
+ },
+ {
+  "doc_id": "RUL-TCN-01",
+  "doc_type": "rule",
+  "title": "Cancelled and late trains",
+  "topic": "train_cancelled",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. Trains cancelled by Ujjwal Rail",
+    "text": "If Ujjwal Rail cancels a train, all bookings on it are cancelled by the operator and passengers are informed by SMS."
+   },
+   {
+    "section": "2. Refund when a train is cancelled",
+    "text": "Passengers get 100% of the fare back automatically; no request is needed."
+   },
+   {
+    "section": "3. Late trains",
+    "text": "If a train departs more than 3 hours late and the passenger does not travel, they may file a TDR (Ticket Deposit Receipt) before departure for a full refund."
+   },
+   {
+    "section": "4. Missed trains and disputes",
+    "text": "Refunds for a missed train, or disputes about a refund, are reviewed by the Refunds desk; the outcome is decided by staff."
+   }
+  ],
+  "settings": [
+   {
+    "name": "train_cancelled_refund_pct",
+    "value": 100,
+    "section": "2. Refund when a train is cancelled"
+   },
+   {
+    "name": "late_train_refund_hours",
+    "value": 3,
+    "section": "3. Late trains"
+   }
+  ]
+ },
+ {
+  "doc_id": "RUL-CMP-01",
+  "doc_type": "rule",
+  "title": "Complaints and help",
+  "topic": "complaints",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. How to complain",
+    "text": "You can lodge a complaint using the Ujjwal Rail mobile app, by speaking with the virtual assistant, or by informing any on‑board staff."
+   },
+   {
+    "section": "2. What we need",
+    "text": "When you complain, provide your booking ID, the train number, the travel date, and a brief description of the issue. Each complaint will be assigned a reference number."
+   },
+   {
+    "section": "3. Safety on board",
+    "text": "If you face an emergency or any harassment, report it immediately to the TTE or the guard. The Safety & Security desk will be notified."
+   },
+   {
+    "section": "4. Outcomes",
+    "text": "Our staff will review every complaint and determine the appropriate outcome. The virtual assistant is not authorized to promise compensation or refunds."
+   }
+  ],
+  "settings": []
+ },
+ {
+  "doc_id": "RUL-SAF-01",
+  "doc_type": "rule",
+  "title": "Conduct and safety",
+  "topic": "safety",
+  "lang": "en",
+  "effective_from": "2025-04-01",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. Conduct",
+    "text": "Passengers must not disturb others, occupy berths not allotted to them, or play loud music between 22:00 and 06:00."
+   },
+   {
+    "section": "2. Women and children",
+    "text": "Reserved berths for women travelling alone are kept where available; staff help is available on request."
+   },
+   {
+    "section": "3. Smoking and alcohol",
+    "text": "Smoking and alcohol are prohibited on trains and platforms."
+   },
+   {
+    "section": "4. Emergencies",
+    "text": "Use the emergency alarm only in real emergencies; misuse is an offence."
+   }
+  ],
+  "settings": []
+ }
+]

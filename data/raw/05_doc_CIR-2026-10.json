@@ -1,0 +1,21 @@
+{
+ "step": "05_doc_CIR-2026-10",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:05:45+05:30",
+ "seconds": 6.8,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_CIR-2026-10.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail official circular (a notice that changes or adds to the rules).\nDocument: CIR-2026-10 \"Festival special trains\" (effective from 2026-11-15). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"1. Special trains\": For the festival season Ujjwal Rail runs these special trains: 01001 South Central Special LTT to NGP, runs Sun; 02002 Winter Festival Special CSMT to NGP, runs Fri,Sat; 01123 Agra Delhi Special AGC to DLI, runs Mon,Sun; 02020 Delhi-Nashik Special NDLS to CSMT, runs Sat.\n- \"2. Booking rules\": Normal booking, cancellation and refund rules apply to special trains. Tatkal is not available on specials.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "1. Special trains",
+    "text": "For the festival season Ujjwal Rail runs the following special trains: 01001 South Central Special LTT to NGP (runs on Sun), 02002 Winter Festival Special CSMT to NGP (runs on Fri, Sat), 01123 Agra Delhi Special AGC to DLI (runs on Mon, Sun), and 02020 Delhi-Nashik Special NDLS to CSMT (runs on Sat)."
+   },
+   {
+    "section": "2. Booking rules",
+    "text": "Normal booking, cancellation and refund rules apply to special trains. Tatkal is not available on specials."
+   }
+  ]
+ }
+}

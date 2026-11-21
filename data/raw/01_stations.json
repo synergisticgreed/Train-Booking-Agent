@@ -1,0 +1,103 @@
+{
+ "step": "01_stations",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:00:56+05:30",
+ "seconds": 4.2,
+ "attempt": 1,
+ "prompt_file": "data/prompts/01_stations.txt",
+ "final_prompt": "Create exactly 15 stations for Ujjwal Rail.\nInclude these 7 exactly (same code, name and city):\n- CSMT: Mumbai CSMT (city Mumbai)\n- LTT: Lokmanya Tilak Terminus (city Mumbai)\n- KYN: Kalyan Junction (city Kalyan)\n- PUNE: Pune Junction (city Pune)\n- NGP: Nagpur Junction (city Nagpur)\n- NDLS: New Delhi (city Delhi)\n- DLI: Old Delhi (city Delhi)\nAdd 8 more stations in central/western/northern India that lie between Mumbai, Pune, Nagpur and Delhi\n(for example on routes through Nashik, Bhusawal, Itarsi, Bhopal, Jhansi, Agra, Wardha, Aurangabad, Solapur).\nFor every station give other_names: common alternative spellings / old names / abbreviations as a\ncomma-separated string (CSMT must include \"Bombay,CST,Bombay VT,Mumbai CST\"; PUNE must include \"Poona\";\nDLI must include \"Delhi Junction\"; LTT must include \"Kurla\"). Use \"\" when there are none.\nStation codes: 2-5 capital letters, unique.\nSchema: {\"stations\": [{\"station_code\": str, \"name\": str, \"other_names\": str, \"city\": str}]}",
+ "response": {
+  "stations": [
+   {
+    "station_code": "CSMT",
+    "name": "Mumbai CSMT",
+    "other_names": "Bombay,CST,Bombay VT,Mumbai CST",
+    "city": "Mumbai"
+   },
+   {
+    "station_code": "LTT",
+    "name": "Lokmanya Tilak Terminus",
+    "other_names": "Kurla",
+    "city": "Mumbai"
+   },
+   {
+    "station_code": "KYN",
+    "name": "Kalyan Junction",
+    "other_names": "",
+    "city": "Kalyan"
+   },
+   {
+    "station_code": "PUNE",
+    "name": "Pune Junction",
+    "other_names": "Poona",
+    "city": "Pune"
+   },
+   {
+    "station_code": "NGP",
+    "name": "Nagpur Junction",
+    "other_names": "",
+    "city": "Nagpur"
+   },
+   {
+    "station_code": "NDLS",
+    "name": "New Delhi",
+    "other_names": "",
+    "city": "Delhi"
+   },
+   {
+    "station_code": "DLI",
+    "name": "Old Delhi",
+    "other_names": "Delhi Junction",
+    "city": "Delhi"
+   },
+   {
+    "station_code": "BSR",
+    "name": "Bhusawal Junction",
+    "other_names": "",
+    "city": "Bhusawal"
+   },
+   {
+    "station_code": "NASH",
+    "name": "Nashik Road",
+    "other_names": "",
+    "city": "Nashik"
+   },
+   {
+    "station_code": "ITJ",
+    "name": "Itarsi Junction",
+    "other_names": "",
+    "city": "Itarsi"
+   },
+   {
+    "station_code": "BPL",
+    "name": "Bhopal Junction",
+    "other_names": "",
+    "city": "Bhopal"
+   },
+   {
+    "station_code": "JHS",
+    "name": "Jhansi Junction",
+    "other_names": "",
+    "city": "Jhansi"
+   },
+   {
+    "station_code": "AGC",
+    "name": "Agra Cantt",
+    "other_names": "",
+    "city": "Agra"
+   },
+   {
+    "station_code": "WRD",
+    "name": "Wardha Junction",
+    "other_names": "",
+    "city": "Wardha"
+   },
+   {
+    "station_code": "SLP",
+    "name": "Solapur Junction",
+    "other_names": "",
+    "city": "Solapur"
+   }
+  ]
+ }
+}

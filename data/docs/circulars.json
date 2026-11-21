@@ -1,0 +1,150 @@
+[
+ {
+  "doc_id": "CIR-2026-07",
+  "doc_type": "circular",
+  "title": "Revised cancellation charges for AC Two Tier and First AC",
+  "topic": "cancellation",
+  "lang": "en",
+  "effective_from": "2026-11-01",
+  "supersedes": [
+   "RUL-CAN-01#3. Refund table"
+  ],
+  "sections": [
+   {
+    "section": "1. Background",
+    "text": "Effective from 2026-11-01, the flat cancellation charge for AC Two Tier (2A) is reduced from Rs 240 to Rs 200. The flat cancellation charge for First AC (1A) is reduced from Rs 300 to Rs 260, while all other class charges remain unchanged."
+   },
+   {
+    "section": "2. Revised refund table",
+    "text": "For confirmed or RAC passengers, cancellations made more than 48 hours before departure attract a flat charge of Rs 120 for SL, Rs 180 for 3A, Rs 200 for 2A, Rs 260 for 1A and Rs 90 for CC. Cancellations made more than 12 hours and up to 48 hours before departure will incur a charge of 25% of the fare, but not less than the applicable flat charge. Cancellations made more than 4 hours and up to 12 hours before departure will incur a charge of 50% of the fare, but not less than the applicable flat charge. Cancellations made 4 hours or less before departure (after the chart) will not be refunded."
+   }
+  ],
+  "settings": [
+   {
+    "name": "cancel_flat_charge_2A",
+    "value": 200,
+    "section": "2. Revised refund table"
+   },
+   {
+    "name": "cancel_flat_charge_1A",
+    "value": 260,
+    "section": "2. Revised refund table"
+   }
+  ]
+ },
+ {
+  "doc_id": "CIR-2026-08",
+  "doc_type": "circular",
+  "title": "Revision of the Sleeper class Tatkal charge",
+  "topic": "tatkal",
+  "lang": "en",
+  "effective_from": "2026-10-01",
+  "supersedes": [
+   "RUL-TAT-01#2. Tatkal charges"
+  ],
+  "sections": [
+   {
+    "section": "1. Revised Tatkal charges",
+    "text": "With effect from 2026-10-01, the Tatkal charge per passenger is SL Rs 175 (earlier Rs 150), 3A Rs 300, and 2A Rs 400. These charges apply to all Tatkal bookings in Sleeper, AC 3 Tier and AC 2 Tier classes."
+   }
+  ],
+  "settings": [
+   {
+    "name": "tatkal_charge_SL",
+    "value": 175,
+    "section": "1. Revised Tatkal charges"
+   }
+  ]
+ },
+ {
+  "doc_id": "CIR-2026-09",
+  "doc_type": "circular",
+  "title": "Cancellation charges from 2026-12-15",
+  "topic": "cancellation",
+  "lang": "en",
+  "effective_from": "2026-12-15",
+  "supersedes": [
+   "RUL-CAN-01#3. Refund table",
+   "CIR-2026-07#2. Revised refund table"
+  ],
+  "sections": [
+   {
+    "section": "1. Revised refund table",
+    "text": "Effective from 2026-12-15, the flat cancellation charges per confirmed or RAC passenger are: SL Rs 100, 3A Rs 160, 2A Rs 200, 1A Rs 260, CC Rs 80 if you cancel more than 48 hours before departure. If you cancel more than 12 hours and up to 48 hours before departure, the charge will be 25% of the fare, but it will not be less than the flat charge mentioned above. If you cancel more than 4 hours and up to 12 hours before departure, the charge will be 50% of the fare, but it will not be less than the flat charge, and if you cancel 4 hours or less before departure (after the chart), no refund will be given. Note that \"More than N hours\" is strict, so cancelling exactly N hours before departure falls in the next, costlier band."
+   }
+  ],
+  "settings": [
+   {
+    "name": "cancel_flat_charge_SL",
+    "value": 100,
+    "section": "1. Revised refund table"
+   },
+   {
+    "name": "cancel_flat_charge_3A",
+    "value": 160,
+    "section": "1. Revised refund table"
+   },
+   {
+    "name": "cancel_flat_charge_CC",
+    "value": 80,
+    "section": "1. Revised refund table"
+   }
+  ]
+ },
+ {
+  "doc_id": "CIR-2026-10",
+  "doc_type": "circular",
+  "title": "Festival special trains",
+  "topic": "special_trains",
+  "lang": "en",
+  "effective_from": "2026-11-15",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. Special trains",
+    "text": "For the festival season Ujjwal Rail runs the following special trains: 01001 South Central Special LTT to NGP (runs on Sun), 02002 Winter Festival Special CSMT to NGP (runs on Fri, Sat), 01123 Agra Delhi Special AGC to DLI (runs on Mon, Sun), and 02020 Delhi-Nashik Special NDLS to CSMT (runs on Sat)."
+   },
+   {
+    "section": "2. Booking rules",
+    "text": "Normal booking, cancellation and refund rules apply to special trains. Tatkal is not available on specials."
+   }
+  ],
+  "settings": []
+ },
+ {
+  "doc_id": "CIR-2026-11",
+  "doc_type": "circular",
+  "title": "पहचान पत्र: डिजिटल दस्तावेज़ मान्य",
+  "topic": "id_proof",
+  "lang": "hi",
+  "effective_from": "2026-09-02",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. डिजिटल पहचान पत्र",
+    "text": "2026-09-02 से DigiLocker में रखे आधार और ड्राइविंग लाइसेंस, तथा m-Aadhaar ऐप, यात्रा के दौरान मान्य पहचान पत्र होंगे। फोटो कॉपी या स्क्रीनशॉट मान्य नहीं है।"
+   }
+  ],
+  "settings": []
+ },
+ {
+  "doc_id": "CIR-2026-12",
+  "doc_type": "circular",
+  "title": "Fog season: delays and late-train refunds",
+  "topic": "train_cancelled",
+  "lang": "en",
+  "effective_from": "2026-11-20",
+  "supersedes": [],
+  "sections": [
+   {
+    "section": "1. Expected delays",
+    "text": "From December to February trains on the Delhi routes (NDLS, DLI) may run late because of fog. Passengers should check the train status before leaving home."
+   },
+   {
+    "section": "2. Refunds for late trains",
+    "text": "The late-train rule still applies: if the train departs more than 3 hours late and you do not travel, file a TDR before departure for a full refund."
+   }
+  ],
+  "settings": []
+ }
+]

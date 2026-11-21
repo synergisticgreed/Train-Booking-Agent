@@ -1,0 +1,17 @@
+{
+ "step": "05_doc_FAQ-06",
+ "model": "openai/gpt-oss-120b",
+ "generated_at": "2026-11-21T14:06:25+05:30",
+ "seconds": 3.1,
+ "attempt": 1,
+ "prompt_file": "data/prompts/05_doc_FAQ-06.txt",
+ "final_prompt": "Write the text of an Ujjwal Rail helpdesk FAQ answer.\nDocument: FAQ-06 \"What does RAC mean?\" (effective from 2025-06-01). Language: English.\nWrite each section below as 1-4 clear sentences for passengers, using ONLY the facts given.\nKeep every number, amount, percentage, time, date and document ID exactly as given, using Western\ndigits (0-9) even in Hindi. Write dates in the YYYY-MM-DD form given. Do not add any other numbers,\nrules, phone numbers, websites or contact details.\nSections (name: facts):\n- \"Answer\": RAC passengers can travel and share a side-lower berth until a full berth is free.\nSchema: {\"sections\": [{\"section\": \"<exact section name>\", \"text\": str}]}",
+ "response": {
+  "sections": [
+   {
+    "section": "Answer",
+    "text": "RAC passengers can travel and share a side-lower berth until a full berth is free."
+   }
+  ]
+ }
+}
